@@ -20,9 +20,7 @@ int FirstOccBS(vector<int> &v, int target) {
             s = mid + 1;
 
     }
-
-
-    return res; // because at last, target is at 1st occurence. end is end-1, and s at correct index
+    return res;
 }
 
 int main()
