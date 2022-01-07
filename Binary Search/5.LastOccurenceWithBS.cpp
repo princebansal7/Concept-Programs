@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int BinarySearch(vector<int> &v, int target) {
+int LastOccBS(vector<int> &v, int target) {
 
     int n = v.size();
     int res = -1;
@@ -37,7 +37,7 @@ int main()
 
     int target; cin >> target;
 
-    int index = BinarySearch(v, target);
+    int index = LastOccBS(v, target);
 
     if (index != -1)
         cout << "Last Occcurence of " << target << " is at Index: " << index;
