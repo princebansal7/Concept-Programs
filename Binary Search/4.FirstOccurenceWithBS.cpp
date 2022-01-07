@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int BinarySearch(vector<int> &v, int target) {
+int FirstOccBS(vector<int> &v, int target) {
 
     int n = v.size();
 
@@ -37,7 +37,7 @@ int main()
 
     int target; cin >> target;
 
-    int index = BinarySearch(v, target);
+    int index = FirstOccBS(v, target);
 
     if (index != -1)
         cout << "First Occcurence of " << target << " is at Index: " << index;
