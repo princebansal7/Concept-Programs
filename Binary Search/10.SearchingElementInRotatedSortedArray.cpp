@@ -54,7 +54,7 @@ int main()
 #ifdef PRINCE
     freopen("debug.txt", "w", stderr);
 #endif
-
+    int ans = -1;
     int n; cin >> n;
 
     vector<int> v;
@@ -68,22 +68,17 @@ int main()
 
     int minElementIndex = pivotElement(v);
 
-    if (v[minElementIndex] <= target && target <= v[n - 1]) { // => search in right part
 
-        int ans = BinarySearch(v, minElementIndex, n - 1, target);
+    if (v[minElementIndex] <= target && target <= v[n - 1])     // => search in Right Part
+        ans = BinarySearch(v, minElementIndex, n - 1, target);
+    else                                                        // => Search in Left Part
+        ans = BinarySearch(v, 0, minElementIndex - 1, target);
 
-        if (ans != -1)
-            cout << target << " present at " << ans << " index" << endl;
-        else
-            cout << "Not Present" << endl;
-    }
-    else {
-        int ans = BinarySearch(v, 0, minElementIndex - 1, target);
 
-        if (ans != -1)
-            cout << target << " present at " << ans << " index" << endl;
-        else
-            cout << "Not Present" << endl;
-    }
+    if (ans != -1)
+        cout << target << " present at " << ans << " index" << endl;
+    else
+        cout << "Not Present" << endl;
+
     return 0;
 }
