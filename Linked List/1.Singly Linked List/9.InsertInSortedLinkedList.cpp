@@ -84,8 +84,7 @@ Node *InsertSortedShortWay(Node *head, int val) {
 
         curr = curr->next;
 
-    }                       // at the end of while loop, curr is pointing to last node
-
+    }                       
     temp->next = curr->next;
     curr->next = temp;
     return head;
