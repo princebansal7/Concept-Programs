@@ -64,6 +64,22 @@ Node *ReverseList(Node *head) {
     return head;
 }
 
+//___________WAY-2 (Changing the links itself)____________________________
+
+Node *ReverseListEffi(Node *head) {
+    Node *curr = head;
+    Node *prev = NULL;
+
+    while (curr != NULL) {
+        Node *temp = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = temp;
+    }
+    return prev;  // prev is new head
+}
+
+
 int main()
 {
 
@@ -89,12 +105,21 @@ int main()
         head->next->next->next->next->next = new Node(60);
 
 
-        cout << "Before Reversing:\n";
+        // cout << "[WAY-1] Before Reversing ";
+        // printList(head);
+
+        // head = ReverseList(head);
+
+        // cout << "[WAY-1] After Reversing ";
+        // printList(head);
+
+
+        cout << "[WAY-2] Before Reversing ";
         printList(head);
 
-        head = ReverseList(head);
+        head = ReverseListEffi(head);
 
-        cout << "After Reversing:\n";
+        cout << "[WAY-2] After Reversing ";
         printList(head);
 
         cout << endl;
