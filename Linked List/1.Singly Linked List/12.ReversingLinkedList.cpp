@@ -41,13 +41,26 @@ Node *ReverseList(Node *head) {
     }
 
     curr = head;
-    int i = temp.size() - 1;
 
-    while (curr != NULL) {
-        curr->data = temp[i];
-        i--;
-        curr = curr->next;
+//______Way-1___________
+
+    for (curr = head; curr != NULL; curr = curr->next) {
+        curr->data = temp.back();
+        temp.pop_back();
     }
+
+    /*_____ Way-2___________
+
+       int i = temp.size() - 1;
+
+       while (curr != NULL) {
+           curr->data = temp[i];
+           i--;
+           curr = curr->next;
+       }
+
+    _______________________*/
+
     return head;
 }
 
