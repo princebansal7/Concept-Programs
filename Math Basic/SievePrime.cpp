@@ -14,7 +14,7 @@ bool isPrime(long long n) {
 }
 
 
-//___Sieve of Rratosthenes method________________________
+//___Sieve of Eratosthenes method________________________
 
 void sievePrime(int n) {
 
