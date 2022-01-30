@@ -14,7 +14,9 @@ bool isPrime(long long n) {
 }
 
 
-//___Sieve of Eratosthenes method________________________
+/*___Sieve of Rratosthenes method________________________
+
+1.Basic Way
 
 void sievePrime(int n) {
 
@@ -43,6 +45,26 @@ void sievePrime(int n) {
     cout << "Total Prime no till " << n << " are: " << count << endl;
 }
 
+_______________________________________________________________________*/
+
+// 2. Optimised Seive
+
+void Seive(long long n) {
+
+    vector<bool> prime(n + 1, true);
+
+    prime[0] = prime[1] = false;
+
+    for (int i = 2; i <= n; i++) {
+
+        if (prime[i]) {
+            cout << i << " ";
+            for (int j = i * i; j <= n; j += i)
+                prime[j] = false;
+        }
+    }
+}
+
 int main()
 {
 
@@ -57,7 +79,7 @@ int main()
     // else
     //     cout << "No, Not Prime" << endl;
 
-    sievePrime(n);
+    Seive(n);
 
     return 0;
 }
