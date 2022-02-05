@@ -4,9 +4,16 @@ using namespace std;
 #define nl "\n"
 #define ll long long
 
+/*
+
+Fibonacci seq:
+    0 1 1 2 3 5 8 13 21 34 55 89 144 . . . .
+    
+*/
+
 void PrintFib(int n) {
 
-    int first = 1;
+    int first = 0;
     int second = 1;
 
     cout << first << " " << second << " ";
