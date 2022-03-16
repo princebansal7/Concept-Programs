@@ -7,9 +7,11 @@ using namespace std;
 
 int arr[100];
 
+/* TC: O(n), as Two traversals required-------------------------------------
+
 int SecondLargest(int arr[], int n)
 {
-    if (n <= 1)
+    if (n <= 2)
         return -1;
 
     int maxValue = arr[0];
@@ -27,7 +29,7 @@ int SecondLargest(int arr[], int n)
 
 int SecondSmallest(int arr[], int n)
 {
-    if (n <= 1)
+    if (n <= 2)
         return -1;
 
     int MinValue = arr[0];
@@ -39,6 +41,52 @@ int SecondSmallest(int arr[], int n)
     for (int i = 0; i < n; i++)
         if (arr[i] != MinValue && SecondMinValue > arr[i])
             SecondMinValue = arr[i];
+
+    return SecondMinValue;
+}
+
+------------------------------------------------------------------------------*/
+
+// Best approach:-
+
+int SecondLargest(int arr[], int n)
+{
+    if (n <= 2)
+        return -1;
+
+    int MaxValue = INT_MIN, SecondMaxValue = INT_MIN;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] > MaxValue)
+        {
+            SecondMaxValue = MaxValue;
+            MaxValue = arr[i];
+        }
+        else if (arr[i] > SecondMaxValue && arr[i] != MaxValue)
+            SecondMaxValue = arr[i];
+    }
+
+    return SecondMaxValue;
+}
+
+int SecondSmallest(int arr[], int n)
+{
+    if (n <= 2)
+        return -1;
+
+    int MinValue = INT_MAX, SecondMinValue = INT_MAX;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] < MinValue)
+        {
+            SecondMinValue = MinValue;
+            MinValue = arr[i];
+        }
+        else if (arr[i] < SecondMinValue && arr[i] != MinValue)
+            SecondMinValue = arr[i];
+    }
 
     return SecondMinValue;
 }
