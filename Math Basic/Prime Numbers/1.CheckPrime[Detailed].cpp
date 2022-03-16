@@ -1,16 +1,20 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 //__Way-1.1, TC: O(n)_______________________________________
 
-bool checkPrime1(int n) {
+bool checkPrime1(int n)
+{
 
     // Prime number will have exactly 2 factors
 
     int count = 0;
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++)
+    {
         if (n % i == 0)
             count++;
     }
@@ -21,12 +25,14 @@ bool checkPrime1(int n) {
 
 //__Way-1.2__TC: O(n)_______________________________________
 
-bool checkPrime2(int n) {
+bool checkPrime2(int n)
+{
 
     if (n <= 1)
         return false;
 
-    for (int i = 2; i < n; i++) {
+    for (int i = 2; i < n; i++)
+    {
         if (n % i == 0)
             return false;
     }
@@ -35,13 +41,16 @@ bool checkPrime2(int n) {
 
 //__Way-2.1, TC: O(sqrt(n) * log(n))_______________________________________
 
-bool checkPrime3(int n) {
+bool checkPrime3(int n)
+{
 
     // Prime number will have exactly 2 factors
 
     int count = 0;
-    for (int i = 1; i <= sqrt(n); i++) {  // sqrt() takes O(log(n)) time
-        if (n % i == 0) {
+    for (int i = 1; i <= sqrt(n); i++)
+    { // sqrt() takes O(log(n)) time
+        if (n % i == 0)
+        {
             count++;
 
             if ((n / i) != i)
@@ -55,12 +64,14 @@ bool checkPrime3(int n) {
 
 //__Way-2.2__TC: O(sqrt(n) * log(n))___________________________________
 
-bool checkPrime4(int n) {
+bool checkPrime4(int n)
+{
 
     if (n <= 1)
         return false;
 
-    for (int i = 2; i <= sqrt(n); i++) { // sqrt() takes O(log(n)) time
+    for (int i = 2; i <= sqrt(n); i++)
+    { // sqrt() takes O(log(n)) time
         if (n % i == 0)
             return false;
     }
@@ -71,13 +82,16 @@ bool checkPrime4(int n) {
 
 //__Way-3.1, TC: O(sqrt(n))_______________________________________
 
-bool checkPrime5(int n) {
+bool checkPrime5(int n)
+{
 
     // Prime number will have exactly 2 factors
 
     int count = 0;
-    for (int i = 1; i * i <= n; i++) { // writing i*i <=n instead of i<=sqrt(n) => O(1) operation
-        if (n % i == 0) {
+    for (int i = 1; i * i <= n; i++)
+    { // writing i*i <=n instead of i<=sqrt(n) => O(1) operation
+        if (n % i == 0)
+        {
             count++;
 
             if ((n / i) != i)
@@ -91,12 +105,14 @@ bool checkPrime5(int n) {
 
 //__Way-3.2__TC: O(sqrt(n))_________________________
 
-bool checkPrime6(int n) {
+bool checkPrime6(int n)
+{
 
     if (n <= 1)
         return false;
 
-    for (int i = 2; i * i <= n; i++) { // writing i*i <=n instead of i<=sqrt(n) => O(1) operation
+    for (int i = 2; i * i <= n; i++)
+    { // writing i*i <=n instead of i<=sqrt(n) => O(1) operation
         if (n % i == 0)
             return false;
     }
@@ -105,18 +121,15 @@ bool checkPrime6(int n) {
 
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    int n; cin >> n;
+        int n;
+    cin >> n;
 
     if (checkPrime5(n))
         cout << "Prime" << nl;
     else
         cout << "Not Prime" << nl;
-
 
     return 0;
 }
