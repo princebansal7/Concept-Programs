@@ -1,6 +1,5 @@
 #include <iostream>
-#include <utility>
-#include <algorithm>
+#include <unordered_map>
 using namespace std;
 #define nl "\n"
 #define ll long long
@@ -8,13 +7,7 @@ using namespace std;
 int arr[100];
 int freq[1000];
 
-void printArray(int arr[], int n)
-{
-    for (int i = 0; i < n; i++)
-        cout << arr[i] << " ";
-
-    cout << nl;
-}
+/*---------- WAY-1------------------------------------
 
 void CountFreq1(int arr[], int n)
 {
@@ -23,8 +16,65 @@ void CountFreq1(int arr[], int n)
         freq[arr[i]]++;
     }
 
+    for (int i = 0; i < 1000; i++)
+    {
+        if (freq[arr[i]] != 0)
+        {
+            cout << arr[i] << "-> " << freq[arr[i]] << nl;
+        }
+    }
+}
+---------------------------------------------------------*/
+
+/*--------- Way-2------------------------------------------
+
+bool visited[100];
+void CountFreq2(int arr[], int n)
+{
     for (int i = 0; i < n; i++)
     {
+        if (visited[i] == true)
+            continue;
+        int count = 1;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[i] == arr[j])
+            {
+                count++;
+                visited[j] = true;
+            }
+        }
+        cout << arr[i] << "-> " << count << nl;
+    }
+}
+---------------------------------------------------------*/
+
+//--------------------Way-3--------------------------------
+
+void CountFreq3(int arr[], int n)
+{
+
+    unordered_map<int, int> mp;
+    for (int i = 0; i < n; i++)
+    {
+        mp[arr[i]]++;
+    }
+
+    // Map Traversal way-1:
+
+    for (auto val : mp)
+    {
+        cout << val.first << "-> " << val.second << nl;
+    }
+
+    cout << nl;
+
+    // Map Traversal way-2:
+
+    unordered_map<int, int>::iterator it;
+    for (it = mp.begin(); it != mp.end(); it++)
+    {
+        cout << it->first << "-> " << it->second << nl;
     }
 }
 
@@ -35,7 +85,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    CountFreq1(arr, n);
+    CountFreq3(arr, n);
 
     return 0;
 }
