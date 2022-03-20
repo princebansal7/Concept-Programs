@@ -3,7 +3,7 @@ using namespace std;
 #define nl "\n"
 #define ll long long
 
-// Naive Way---------------------------
+// Naive Way TC: O(n)---------------------------
 
 int sumInRange1(int l, int r)
 {
@@ -13,7 +13,7 @@ int sumInRange1(int l, int r)
     return sum;
 }
 
-// Optimised Way-----------------------
+// Optimised Way- TC: O(1)----------------------
 
 int sumInRange2(int l, int r)
 {
