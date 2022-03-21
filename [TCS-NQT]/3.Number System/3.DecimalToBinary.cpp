@@ -5,7 +5,7 @@ using namespace std;
 
 //--------WAY-1---------------------------
 
-void decimalToBinary1(int n)
+void decimalToBinary(int n)
 {
     bool bits[32] = {0};
 
