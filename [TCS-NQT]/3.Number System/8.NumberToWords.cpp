@@ -51,7 +51,8 @@ void numtoWords(string str)
 
 int main()
 {
-    string str = "9090";
+    string str;
+    cin >> str;
     numtoWords(str);
     return 0;
 }
