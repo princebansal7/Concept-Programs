@@ -47,7 +47,7 @@ void decimalToBinary(int n)
     */
 }
 
-void octalToBinary1(int octalNum)
+void octalToBinary(int octalNum)
 {
     int decimalNum = octalToDecimal(octalNum);
 
@@ -62,7 +62,7 @@ int main()
 
     int ans;
 
-    octalToBinary1(n);
+    octalToBinary(n);
 
     return 0;
 }
