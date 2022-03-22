@@ -5,7 +5,7 @@ using namespace std;
 
 //--------WAY-1---------------------------
 
-void decimalToBinary(int n)
+void decimalToBinary1(int n)
 {
     bool bits[32] = {0};
 
@@ -21,11 +21,35 @@ void decimalToBinary(int n)
     cout << nl;
 }
 
+// ----WAY-2 (Space optimised)----------------
+
+void decimalToBinary2(int n)
+{
+    bool ok = 0;
+    for (int i = 31; i >= 0; i--)
+    {
+        if ((n >> i) & 1)
+        {
+            ok = 1;
+            cout << 1;
+        }
+        else
+        {
+            if (ok == 1)
+                cout << 0;
+        }
+    }
+    cout << nl;
+}
+
 int main()
 {
     int n;
     cin >> n;
 
-    decimalToBinary(n);
+    decimalToBinary1(n);
+
+    decimalToBinary2(n);
+
     return 0;
 }

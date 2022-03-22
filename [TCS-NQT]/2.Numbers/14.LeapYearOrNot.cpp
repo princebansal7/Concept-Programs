@@ -8,6 +8,7 @@ using namespace std;
 #define isLeapYear(y) ((y % 400) == 0) || ((y % 4 == 0) && (y % 100 != 0))
 
 // Way-2--------------------------------
+
 bool isLeap(int n)
 {
     if (n % 400 == 0)
