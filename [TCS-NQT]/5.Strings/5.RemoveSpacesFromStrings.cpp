@@ -23,7 +23,7 @@ void removeVowels1(string &s)
     cout << ans << nl;
 }
 
-// ----------WAY-2 (Space Optimised)---------------------------------------
+// ----------WAY-2 (Space Optimised)-----------------------------------
 
 void removeVowels2(string &s)
 {
