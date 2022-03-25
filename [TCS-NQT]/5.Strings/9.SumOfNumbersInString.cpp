@@ -31,13 +31,13 @@ int getSum(string &s)
         else
         {
             // atoi() => converts string to integer
-            // to_string => converts interger to string (commonly used)
-            sum += atoi(temp.c_str()); // c_str() coverts c++ string to c style string
+            // to_string => converts integer to string (commonly used)
+            sum += atoi(temp.c_str()); // c_str() converts c++ string to c style string
             temp = "";
         }
     }
     // after the loop end, if string is like: 123Xu10xz25,
-    // 25 is stored in temp, but didn't get added, so we have to add it (if exist)
+    // 25 is stored in temp, but didn't get added, so we have to add it,  (if exist)
 
     sum += atoi(temp.c_str());
     return sum;
