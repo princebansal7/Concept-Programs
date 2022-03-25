@@ -26,7 +26,7 @@ int getSum(string &s)
         if (isdigit(ch)) // if(st[i] >= '0' && st[i] <= '9')
         {
             // isdigit() checks whether that character is digit or not
-            temp += ch;
+            temp += ch; // temp will only contains continuous interger part of string only
         }
         else
         {
