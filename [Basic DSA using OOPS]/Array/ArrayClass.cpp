@@ -23,6 +23,8 @@ public:
     int getSum();
     int getMax();
     int getMin();
+    bool isFull();
+    bool isEmpty();
     ~Array(); // Destructor
 };
 
@@ -188,32 +190,164 @@ int Array::getMin()
     return minVal;
 }
 
+bool Array::isFull()
+{
+    if (lastIndex + 1 == capacity)
+        return true;
+    return false;
+}
+
+bool Array::isEmpty()
+{
+    if (lastIndex == -1)
+        return true;
+    return false;
+}
+
 Array::~Array()
 {
     delete[] ptr;
 }
 
+int menu()
+{
+    int choice;
+    cout << "--------------MENU------------------" << nl << nl;
+    cout << "1.Append new value: " << nl;
+    cout << "2.Insert new value: " << nl;
+    cout << "3.Delete value: " << nl;
+    cout << "4.Edit value: " << nl;
+    cout << "5.Print Array " << nl;
+    cout << "6.Get value from Array: " << nl;
+    cout << "7.Search Value: " << nl;
+    cout << "8.Total Values in Array " << nl;
+    cout << "9.Sum of Array: " << nl;
+    cout << "10.Maximum Element in Array: " << nl;
+    cout << "11.Minimum elemt in Array: " << nl;
+    cout << "12.EXIT: " << nl << nl;
+    cout << "-----------------------------------" << nl;
+    cout << "Enter your Choice: ";
+    cin >> choice;
+
+    return choice;
+}
+
+void printExtraInfo(Array &arr)
+{
+    cout << "___________Array Information________________________" << nl << nl;
+    cout << "Total Elements in Array: " << arr.countElement() << nl;
+    arr.show();
+    cout << "Is Array Full: ";
+    if (arr.isFull())
+        cout << "YES" << nl;
+    else
+        cout << "NO" << nl;
+
+    cout << "Is Array Empty: ";
+    if (arr.isEmpty())
+        cout << "YES" << nl;
+    else
+        cout << "NO" << nl;
+    cout << "___________________________________________________" << nl << nl;
+}
+
 int main()
 {
     Array arr;
-    arr.createArray(5);
-    arr.append(10);
-    arr.append(20);
-    arr.append(30);
-    arr.append(40);
-    arr.show();
-    arr.insertElement(3, 69);
-    arr.show();
-    arr.editArray(2, 7);
-    arr.show();
-    cout << arr.search(69) << nl;
-    arr.append(100);
-    arr.show();
-    arr.deleteElement(9);
-    arr.deleteElement(1);
-    arr.show();
-    cout << arr.countElement() << nl;
-    cout << arr.getMax() << nl;
-    cout << arr.getMin() << nl;
-    cout << arr.getSum() << nl;
+    int n, data, index;
+    cout << "Enter capacity: ";
+    cin >> n;
+    arr.createArray(n);
+
+    // Menu Driven Program
+
+    while (1)
+    {
+        printExtraInfo(arr);
+
+        switch (menu())
+        {
+        case 1:
+            cout << "Enter data to append: ";
+            cin >> data;
+            arr.append(data);
+            break;
+        case 2:
+            cout << "Enter index and data to insert: ";
+            cin >> index >> data;
+            arr.insertElement(index, data);
+            break;
+        case 3:
+            cout << "Enter index to delete: ";
+            cin >> index;
+            arr.deleteElement(index);
+            break;
+        case 4:
+            cout << "Enter index and New data to edit: ";
+            cin >> index >> data;
+            arr.editArray(index, data);
+            break;
+        case 5:
+            cout << "Current Array is: " << nl;
+            arr.show();
+            break;
+        case 6:
+            cout << "Enter index to get the element: ";
+            cin >> index;
+            cout << "Value is: " << arr.getElement(index) << nl;
+            break;
+        case 7:
+            cout << "Enter data to search: ";
+            cin >> data;
+            arr.search(data);
+            break;
+        case 8:
+            cout << "Total Elements in array is: " << arr.countElement() << nl;
+            break;
+        case 9:
+            cout << "Sum of Array is: " << arr.getSum() << nl;
+            break;
+
+        case 10:
+            cout << "Maximum element in Array is: " << arr.getMax() << nl;
+            break;
+
+        case 11:
+            cout << "Minimum element in Array is: " << arr.getMin() << nl;
+            break;
+        case 12:
+            exit(0);
+            break;
+
+        default:
+            cout << "Invalid Choice" << nl;
+            break;
+        }
+    }
+
+    return 0;
 }
+
+/*    Desi Testing
+
+        arr.append(10);
+        arr.append(20);
+        arr.append(30);
+        arr.append(40);
+        arr.show();
+        arr.insertElement(3, 69);
+        arr.show();
+        arr.editArray(2, 7);
+        arr.show();
+        cout << arr.search(69) << nl;
+        arr.append(100);
+        arr.show();
+        arr.deleteElement(9);
+        arr.deleteElement(1);
+        arr.show();
+        cout << arr.countElement() << nl;
+        cout << arr.getMax() << nl;
+        cout << arr.getMin() << nl;
+        cout << arr.getSum() << nl;
+
+    */
