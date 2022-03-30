@@ -23,6 +23,7 @@ public:
     int getSum();
     int getMax();
     int getMin();
+    int arrayCapacity();
     bool isFull();
     bool isEmpty();
     ~Array(); // Destructor
@@ -204,6 +205,11 @@ bool Array::isEmpty()
     return false;
 }
 
+int Array::arrayCapacity()
+{
+    return capacity;
+}
+
 Array::~Array()
 {
     delete[] ptr;
@@ -213,6 +219,7 @@ int menu()
 {
     int choice;
     cout << "--------------MENU------------------" << nl << nl;
+
     cout << "1.Append new value: " << nl;
     cout << "2.Insert new value: " << nl;
     cout << "3.Delete value: " << nl;
@@ -235,7 +242,9 @@ int menu()
 void printExtraInfo(Array &arr)
 {
     cout << "___________Array Information________________________" << nl << nl;
-    cout << "Total Elements in Array: " << arr.countElement() << nl;
+
+    cout << "Capacity of Array is: " << arr.arrayCapacity() << nl;
+    cout << "Total Elements in Array (size): " << arr.countElement() << nl;
     arr.show();
     cout << "Is Array Full: ";
     if (arr.isFull())
