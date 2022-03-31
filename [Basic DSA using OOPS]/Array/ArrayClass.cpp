@@ -218,7 +218,7 @@ Array::~Array()
 int menu()
 {
     int choice;
-    cout << "--------------MENU------------------" << nl << nl;
+    cout << nl << "--------------MENU------------------" << nl << nl;
 
     cout << "1.Append new value: " << nl;
     cout << "2.Insert new value: " << nl;
@@ -232,7 +232,6 @@ int menu()
     cout << "10.Maximum Element in Array: " << nl;
     cout << "11.Minimum elemt in Array: " << nl;
     cout << "12.EXIT: " << nl << nl;
-    cout << "-----------------------------------" << nl;
     cout << "Enter your Choice: ";
     cin >> choice;
 
@@ -241,7 +240,7 @@ int menu()
 
 void printExtraInfo(Array &arr)
 {
-    cout << "___________Array Information________________________" << nl << nl;
+    cout << nl << "___________Array Information___________________" << nl << nl;
 
     cout << "Capacity of Array is: " << arr.arrayCapacity() << nl;
     cout << "Total Elements in Array (size): " << arr.countElement() << nl;
@@ -257,7 +256,7 @@ void printExtraInfo(Array &arr)
         cout << "YES" << nl;
     else
         cout << "NO" << nl;
-    cout << "___________________________________________________" << nl << nl;
+    cout << "________________________________________________" << nl << nl;
 }
 
 int main()
@@ -272,8 +271,6 @@ int main()
 
     while (1)
     {
-        printExtraInfo(arr);
-
         switch (menu())
         {
         case 1:
@@ -332,6 +329,7 @@ int main()
             cout << "Invalid Choice" << nl;
             break;
         }
+        printExtraInfo(arr);
     }
 
     return 0;

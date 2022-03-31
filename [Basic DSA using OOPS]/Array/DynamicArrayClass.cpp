@@ -117,7 +117,7 @@ void DynamicArray::deleteElement(int index)
             ptr[i] = ptr[i + 1]; // shifting element to left side
         }
         lastIndex--;
-        if (capacity > 1 && capacity == lastIndex + 1)
+        if ((capacity > 1) && (capacity / 2 == lastIndex + 1))
             halfArray();
     }
 }
@@ -239,7 +239,6 @@ int menu()
     cout << "10.Maximum Element in Array: " << nl;
     cout << "11.Minimum elemt in Array: " << nl;
     cout << "12.EXIT: " << nl << nl;
-    cout << "-----------------------------------" << nl;
     cout << "Enter your Choice: ";
     cin >> choice;
 
@@ -248,13 +247,13 @@ int menu()
 
 void printExtraInfo(DynamicArray &arr)
 {
-    cout << "___________Array Information________________________" << nl << nl;
+    cout << nl << "_________Dynamic Array Information___________" << nl << nl;
 
     cout << "Capacity of Array is: " << arr.arrayCapacity() << nl;
     cout << "Total Elements in Array (size): " << arr.countElement() << nl;
     arr.show();
     cout << nl;
-    cout << "___________________________________________________" << nl << nl;
+    cout << "_________________________________________________" << nl << nl;
 }
 
 int main()
@@ -269,7 +268,6 @@ int main()
 
     while (1)
     {
-        printExtraInfo(arr);
 
         switch (menu())
         {
@@ -329,6 +327,7 @@ int main()
             cout << "Invalid Choice" << nl;
             break;
         }
+        printExtraInfo(arr);
     }
 
     return 0;
