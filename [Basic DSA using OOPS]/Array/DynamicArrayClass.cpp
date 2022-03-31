@@ -2,6 +2,8 @@
 using namespace std;
 #define nl "\n"
 
+// similar to vector in c++
+
 class DynamicArray
 {
 private:
@@ -234,7 +236,7 @@ int menu()
     cout << "5.Print Array " << nl;
     cout << "6.Get value from Array: " << nl;
     cout << "7.Search Value: " << nl;
-    cout << "8.Total Values in Array " << nl;
+    cout << "8.Total Values in Array (size) " << nl;
     cout << "9.Sum of Array: " << nl;
     cout << "10.Maximum Element in Array: " << nl;
     cout << "11.Minimum elemt in Array: " << nl;
