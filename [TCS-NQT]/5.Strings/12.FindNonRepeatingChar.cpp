@@ -9,7 +9,6 @@ using namespace std;
 void findNonRep1(string &s)
 {
     int freq[200] = {0};
-    int i, j;
     int l = s.length();
 
     for (int i = 0; i < l; i++)
@@ -17,11 +16,9 @@ void findNonRep1(string &s)
         freq[i] = 1;
         for (int j = i + 1; j < l; j++)
         {
-
             if (s[i] == s[j])
             {
                 freq[i]++;
-
                 s[j] = '-'; // set s[j] to - to avoid visited character
             }
         }
