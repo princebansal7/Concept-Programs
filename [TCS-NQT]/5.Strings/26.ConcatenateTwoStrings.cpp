@@ -31,6 +31,15 @@ void concate2(string &s1, string &s2)
 
 //-----WAY-3--------------------
 
+void concate3(string &s1, string &s2)
+{
+    s1.append(s2);
+
+    cout << s1 << nl;
+}
+
+//----WAY-4-------------------------
+
 void Cstyleconcate()
 {
     // strcat works omly for char array (like in  C lang)
@@ -39,15 +48,6 @@ void Cstyleconcate()
     char s2[] = "Bansal"; // or {'B','a','n','s','a','l','\0'};
 
     strcat(s1, s2);
-
-    cout << s1 << nl;
-}
-
-//----WAY-4-------------------------
-
-void concate4(string &s1, string &s2)
-{
-    s1.append(s2);
 
     cout << s1 << nl;
 }
@@ -61,9 +61,9 @@ int main()
 
     concate2(s1, s2);
 
-    // Cstyleconcate();
+    // concate3(s1, s2);
 
-    // concate4(s1, s2);
+    // Cstyleconcate();
 
     return 0;
 }
