@@ -36,7 +36,7 @@ void Cstyleconcate()
     // strcat works omly for char array (like in  C lang)
 
     char s1[] = "Prince"; // or {'P','r','i','n','c','e','\0'};
-    char s2[] = "Bansal"; // or or {'B','a','n','s','a','l','\0'};
+    char s2[] = "Bansal"; // or {'B','a','n','s','a','l','\0'};
 
     strcat(s1, s2);
 
