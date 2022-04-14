@@ -8,6 +8,8 @@ using namespace std;
 #define nl "\n"
 #define ll long long
 
+// O(n^2)
+
 void HighestRepeatedLetters(string &str)
 {
     int len = str.length();
