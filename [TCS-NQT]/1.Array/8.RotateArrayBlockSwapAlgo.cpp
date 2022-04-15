@@ -6,7 +6,7 @@ using namespace std;
 
 int arr[100];
 
-/*----------Way-1--------------------------------------
+//----------Way-1--------------------------------------
 
 void rotateByOne(int arr[], int n)
 {
@@ -20,21 +20,21 @@ void rotateByOne(int arr[], int n)
     arr[0] = temp;
 }
 
-void rotateArray3(int arr[], int n, int k)
+void rotateArray1(int arr[], int n, int k)
 {
     for (int i = 1; i <= k; i++)
         rotateByOne(arr, n);
 }
-----------------------------------------------------*/
 
-/*-----------WAY-2-----------------------------------
+//-----------WAY-2-----------------------------------
 
 void reverse(int arr[], int low, int high)
 {
     while (low < high)
         swap(arr[low++], arr[high--]);
 }
-void rotateArray1(int arr[], int n, int k)
+
+void rotateArray2(int arr[], int n, int k)
 {
     int size = n;
     int left = 0;
@@ -55,11 +55,10 @@ void rotateArray1(int arr[], int n, int k)
     // reverse(arr, k, right);
     // reverse(arr, left, right);
 }
------------------------------------------------------*/
 
-/*-----------WAY-3------------------------------------------
+//-----------WAY-3------------------------------------------
 
-void rotateArray2(int arr[], int n, int k)
+void rotateArray3(int arr[], int n, int k)
 {
 
     int temp[n];
@@ -75,18 +74,87 @@ void rotateArray2(int arr[], int n, int k)
         cout << temp[i] << " ";
     cout << nl;
 }
-------------------------------------------------------------------*/
 
-/*---------WAY-4 (Block Swap Algorithm)----------------------------
+//---------WAY-4 (Block Swap Algorithm)----------------------------
 
-
-void rotateArray4(int arr[], int n, int k){
-
-
+void swap(int arr[], int fi, int si, int d)
+{
+    int i, temp;
+    for (i = 0; i < d; i++)
+    {
+        temp = arr[fi + i];
+        arr[fi + i] = arr[si + i];
+        arr[si + i] = temp;
+    }
 }
 
+// RECURSIVE
 
---------------------------------------------------------------------*/
+void rotateArray4(int arr[], int n, int k)
+{
+    // Left Rotate
+    /* Return If number of elements to be rotated
+   is zero or equal to array size */
+    if (k == 0 || k == n)
+        return;
+    /* If number of elements to be rotated is more than array size*/
+    if (k > n)
+        k = k % n;
+    /*If number of elements to be rotated
+    is exactly half of array size */
+    if (n - k == k)
+    {
+        swap(arr, 0, n - k, k);
+        return;
+    }
+
+    /* If A is shorter*/
+    if (k < n - k)
+    {
+        swap(arr, 0, n - k, k);
+        rotateArray4(arr, k, n - k);
+    }
+    else /* If B is shorter*/
+    {
+        swap(arr, 0, k, n - k);
+        rotateArray4(arr + n - k, 2 * k - n, k); /*This is tricky*/
+    }
+}
+
+/* ITERATIVE
+void rotateArray4(int arr[], int d, int n)
+{
+    int i, j;
+    if (d == 0 || d == n)
+        return;
+
+    // If number of elements to be rotated is more than array size
+    if (d > n)
+        d = d % n;
+
+    i = d;
+    j = n - d;
+    while (i != j)
+    {
+        if (i < j) //A is shorter
+        {
+            swap(arr, d - i, d + j - i, i);
+            j -= i;
+        }
+        else //B is shorter
+        {
+            swap(arr, d - i, d, j);
+            i -= j;
+        }
+
+        // printArray(arr, 7);
+    }
+
+    // Finally, block swap A and B
+    swap(arr, d - i, d, i);
+}
+
+*/
 
 int main()
 {
@@ -95,7 +163,13 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    // rotateArray3(arr, n, k);
+    // rotateArray1(arr, n, k);
+
+    // rotateArray2(arr, n, k);
+
+    rotateArray3(arr, n, k);
+
+    // rotateArray4(arr, n, k);
 
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
