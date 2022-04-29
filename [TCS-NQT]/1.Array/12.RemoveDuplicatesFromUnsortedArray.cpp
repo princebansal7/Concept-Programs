@@ -10,24 +10,12 @@ using namespace std;
 #define ll long long
 int arr[100];
 
-//-----Using Extra space----------------------
-
-void removeDuplicates1(int *arr, int n)
-{
-    set<int> st;
-    for (int i = 0; i < n; i++) // O(NlogN)
-    {
-        st.insert(arr[i]);
-    }
-    for (int val : st)
-        cout << val << " ";
-    cout << nl;
-}
-
 //----Modifying Array using Hash Set TC: O(n*log(n))+O(n) , SC: O(N)----
 
-int removeDuplicates2(int *arr, int n)
+int removeDuplicates1(int *arr, int n)
 {
+    // set stores distinct data in sorted manner (so this works for unsorted array too)
+
     set<int> st;
     for (int i = 0; i < n; i++) // O(NlogN)
     {
@@ -43,20 +31,29 @@ int removeDuplicates2(int *arr, int n)
     return newSize;
 }
 
-//---Using Two Pointers--TC:O(N), SC:O(1)---------
+//---Brute Force, Using Extra Bool array---------
 
-int removeDuplicates3(int *arr, int n)
+void removeDuplicates2(int *arr, int n)
 {
-    int newSizeIndex = 0;
-    for (int i = 1; i < n; i++)
+    bool check[n] = {true};
+
+    for (int i = 0; i < n; i++)
     {
-        if (arr[newSizeIndex] != arr[i])
+        if (check[i] == true)
         {
-            newSizeIndex++;
-            arr[newSizeIndex] = arr[i];
+            for (int j = i + 1; j < n; j++)
+            {
+                if (arr[i] == arr[j])
+                    check[j] = false;
+            }
         }
     }
-    return newSizeIndex + 1;
+    for (int i = 0; i < n; i++)
+    {
+        if (check[i] == false)
+            cout << arr[i] << " ";
+    }
+    cout << nl;
 }
 
 int main()
@@ -64,21 +61,14 @@ int main()
     int n;
     cin >> n;
 
-    // Enter Sorted Array
-
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    // removeDuplicates1(arr, n);
-
-    // int size = removeDuplicates2(arr, n); // will give us the size of new modified array
+    // int size = removeDuplicates1(arr, n); // will give us the size of new modified array
     // for (int i = 0; i < size; i++)
     //     cout << arr[i] << " ";
     // cout << nl;
 
-    int size = removeDuplicates3(arr, n);
-    for (int i = 0; i < size; i++)
-        cout << arr[i] << " ";
-    cout << nl;
+    removeDuplicates2(arr, n);
     return 0;
 }

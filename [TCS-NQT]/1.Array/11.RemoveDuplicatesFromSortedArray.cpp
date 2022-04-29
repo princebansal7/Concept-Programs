@@ -43,7 +43,7 @@ int removeDuplicates2(int *arr, int n)
     return newSize;
 }
 
-//---Using Two Pointers--TC:O(N), SC:O(1)---------
+//---Using Two Pointers (Approach for Sorted array)--TC:O(N), SC:O(1)---------
 
 int removeDuplicates3(int *arr, int n)
 {
