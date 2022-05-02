@@ -36,6 +36,7 @@ int removeDuplicates2(int *arr, int n)
     int newSize = st.size(); // Getting new size
 
     // Modifying Array
+
     int index = 0;
     for (int val : st)
         arr[index++] = val;
