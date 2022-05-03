@@ -42,7 +42,6 @@ void findNonRepeated2(int *arr, int n)
     }
 
     // checking for all b/w elements
-
     for (int i = 1; i < n - 1; i++)
     {
         if (arr[i] != arr[i - 1] && arr[i] != arr[i + 1])
@@ -50,6 +49,7 @@ void findNonRepeated2(int *arr, int n)
             cout << arr[i] << " ";
         }
     }
+
     // Edge case: Checking for last element
     if (arr[n - 1] != arr[n - 2])
     {
