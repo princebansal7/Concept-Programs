@@ -51,7 +51,7 @@ void replacingWithRanks1(int arr[], int n)
     cout << nl;
 }
 
-// WAY-1: Basic naive way , TC: O(N^2),SC: O(1)----------
+// WAY-1: Basic naive way , TC: O(N^2),SC: O(N)----------
 
 void replaceWithRanks2(int arr[], int n)
 {
