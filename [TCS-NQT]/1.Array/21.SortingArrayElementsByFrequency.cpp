@@ -20,15 +20,23 @@ int arr[100];
     array[] = {-199,6,7,-199,3,5}
     Output: -199 -199 3 5 6 7
 
-    Explanation: 1st come that element who have more frequency, then if any elements have same frequency, then sort according
+    Explanation: 1st come that element who have more frequency, and if elements have same frequency, then sort according
                  to element's value.
 */
 
 void sortByFreq1(int arr[], int n)
 {
-    unordered_map<int, int> mp;
+    map<int, int> mp;
     for (int i = 0; i < n; i++)
         mp[arr[i]]++;
+
+    for (auto val : mp) {
+        while (val.second != 0) {
+            cout << val.first << " ";
+            val.second--;
+        }
+    }
+    cout << nl;
 }
 
 int main()
@@ -37,6 +45,8 @@ int main()
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> arr[i];
+
+    sortByFreq1(arr, n);
 
     return 0;
 }
