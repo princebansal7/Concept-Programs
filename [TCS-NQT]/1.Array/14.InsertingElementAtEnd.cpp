@@ -5,7 +5,7 @@ using namespace std;
 
 int arr[100];
 
-void printArray(int *arr, int n)
+void printArray(int* arr, int n)
 {
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";

@@ -12,7 +12,7 @@ int arr[100];
 
 //-----Using Extra space----------------------
 
-void removeDuplicates1(int *arr, int n)
+void removeDuplicates1(int* arr, int n)
 {
     set<int> st;
     for (int i = 0; i < n; i++) // O(NlogN)
@@ -26,11 +26,10 @@ void removeDuplicates1(int *arr, int n)
 
 //----Modifying Array using Hash Set TC: O(n*log(n))+O(n) , SC: O(N)----
 
-int removeDuplicates2(int *arr, int n)
+int removeDuplicates2(int* arr, int n)
 {
     set<int> st;
-    for (int i = 0; i < n; i++) // O(NlogN)
-    {
+    for (int i = 0; i < n; i++) { // O(NlogN)
         st.insert(arr[i]);
     }
     int newSize = st.size(); // Getting new size
@@ -46,13 +45,11 @@ int removeDuplicates2(int *arr, int n)
 
 //---Using Two Pointers (Approach for Sorted array)--TC:O(N), SC:O(1)---------
 
-int removeDuplicates3(int *arr, int n)
+int removeDuplicates3(int* arr, int n)
 {
     int newSizeIndex = 0;
-    for (int i = 1; i < n; i++)
-    {
-        if (arr[newSizeIndex] != arr[i])
-        {
+    for (int i = 1; i < n; i++) {
+        if (arr[newSizeIndex] != arr[i]) {
             newSizeIndex++;
             arr[newSizeIndex] = arr[i];
         }

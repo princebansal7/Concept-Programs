@@ -3,8 +3,8 @@
 
 */
 
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <map>
 #include <set>
 using namespace std;
@@ -29,8 +29,7 @@ void replacingWithRanks1(int arr[], int n)
     sort(temp, temp + n);
 
     map<int, int> mp;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         if (mp.find(temp[i]) == mp.end())
             mp[temp[i]] = i + 1;
     }
@@ -39,10 +38,8 @@ void replacingWithRanks1(int arr[], int n)
     // {
     //     cout << val.first << " " << val.second << nl;
     // }
-    for (int i = 0; i < n; i++)
-    {
-        if (mp.find(arr[i]) != mp.end())
-        {
+    for (int i = 0; i < n; i++) {
+        if (mp.find(arr[i]) != mp.end()) {
             temp[i] = mp[arr[i]];
         }
     }
@@ -55,15 +52,13 @@ void replacingWithRanks1(int arr[], int n)
 
 void replaceWithRanks2(int arr[], int n)
 {
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         set<int> s;
 
         // We are calculating ranks of elements by checking => vo kitno se bda hai,
         //    => jitno sey bhi bda hai, unhe set me dalo  aur set ka size+1 will be rank of that element
 
-        for (int j = 0; j < n; j++)
-        {
+        for (int j = 0; j < n; j++) {
             if (arr[i] > arr[j])
                 s.insert(arr[j]);
         }
@@ -88,8 +83,7 @@ void replaceWithRanks3(int arr[], int n)
 
     int rank = 1;
     map<int, int> mp;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         if (mp[temp[i]] == 0) // if element count = 0 => it was not present in map prevesiouly
         {
             mp[temp[i]] = rank;

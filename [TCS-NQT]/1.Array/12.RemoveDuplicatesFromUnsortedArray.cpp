@@ -13,7 +13,7 @@ int arr[100];
 
 //----Modifying Array using Hash Set TC: O(n*log(n))+O(n) , SC: O(N)----
 
-int removeDuplicates1(int *arr, int n)
+int removeDuplicates1(int* arr, int n)
 {
     // set stores distinct data in sorted manner (so this works for unsorted array too)
 
@@ -37,23 +37,19 @@ int removeDuplicates1(int *arr, int n)
 
 // NOTE: This approach isn't working for all the cases
 
-void removeDuplicates2(int *arr, int n)
+void removeDuplicates2(int* arr, int n)
 {
-    bool check[n] = {true};
+    bool check[n] = { true };
 
-    for (int i = 0; i < n; i++)
-    {
-        if (check[i] == true)
-        {
-            for (int j = i + 1; j < n; j++)
-            {
+    for (int i = 0; i < n; i++) {
+        if (check[i] == true) {
+            for (int j = i + 1; j < n; j++) {
                 if (arr[i] == arr[j])
                     check[j] = false;
             }
         }
     }
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         if (check[i] == false)
             cout << arr[i] << " ";
     }
@@ -66,8 +62,7 @@ void removeDuplicates3(int arr[], int n)
 {
     unordered_map<int, int> mp;
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         // Simple checking if whether the value present in hashmap or not:
         //  1. if value is not present => duplicate doesn't exits => print this unique value
         //  2. if value is present => we encountered the duplicate => ignore it.

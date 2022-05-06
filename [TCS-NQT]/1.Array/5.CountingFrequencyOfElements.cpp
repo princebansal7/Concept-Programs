@@ -55,15 +55,13 @@ void CountFreq3(int arr[], int n)
 {
 
     unordered_map<int, int> mp;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         mp[arr[i]]++;
     }
 
     // Map Traversal way-1:
 
-    for (auto val : mp)
-    {
+    for (auto val : mp) { // this val is 'const pair<int,int>'
         cout << val.first << "-> " << val.second << nl;
     }
 
@@ -72,8 +70,7 @@ void CountFreq3(int arr[], int n)
     // Map Traversal way-2:
 
     unordered_map<int, int>::iterator it;
-    for (it = mp.begin(); it != mp.end(); it++)
-    {
+    for (it = mp.begin(); it != mp.end(); it++) {
         cout << it->first << "-> " << it->second << nl;
     }
 }

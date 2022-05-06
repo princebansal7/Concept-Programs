@@ -13,8 +13,7 @@ void rotateByOne(int arr[], int n)
     // Right Rotation
 
     int temp = arr[n - 1];
-    for (int i = n - 1; i >= 0; i--)
-    {
+    for (int i = n - 1; i >= 0; i--) {
         arr[i] = arr[i - 1];
     }
     arr[0] = temp;
@@ -65,8 +64,7 @@ void rotateArray3(int arr[], int n, int k)
 
     // Rotating right by k places (clockwise) => Right Rotation
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         temp[(i + k) % n] = arr[i];
     }
 
@@ -80,8 +78,7 @@ void rotateArray3(int arr[], int n, int k)
 void swap(int arr[], int fi, int si, int d)
 {
     int i, temp;
-    for (i = 0; i < d; i++)
-    {
+    for (i = 0; i < d; i++) {
         temp = arr[fi + i];
         arr[fi + i] = arr[si + i];
         arr[si + i] = temp;
@@ -102,19 +99,16 @@ void rotateArray4(int arr[], int n, int k)
         k = k % n;
     /*If number of elements to be rotated
     is exactly half of array size */
-    if (n - k == k)
-    {
+    if (n - k == k) {
         swap(arr, 0, n - k, k);
         return;
     }
 
     /* If A is shorter*/
-    if (k < n - k)
-    {
+    if (k < n - k) {
         swap(arr, 0, n - k, k);
         rotateArray4(arr, k, n - k);
-    }
-    else /* If B is shorter*/
+    } else /* If B is shorter*/
     {
         swap(arr, 0, k, n - k);
         rotateArray4(arr + n - k, 2 * k - n, k); /*This is tricky*/

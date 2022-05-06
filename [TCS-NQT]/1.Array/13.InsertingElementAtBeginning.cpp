@@ -5,7 +5,7 @@ using namespace std;
 
 int arr[100];
 
-void printArray(int *arr, int n)
+void printArray(int* arr, int n)
 {
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
@@ -15,8 +15,7 @@ void printArray(int *arr, int n)
 int insertAtBeg(int arr[], int n, int val)
 {
     cout << "Inserting " << val << " at the beginning:" << nl;
-    for (int i = n - 1; i >= 0; i--)
-    {
+    for (int i = n - 1; i >= 0; i--) {
         arr[i + 1] = arr[i];
     }
     arr[0] = val;

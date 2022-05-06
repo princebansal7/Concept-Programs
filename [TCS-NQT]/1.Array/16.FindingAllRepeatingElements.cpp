@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <unordered_map>
-#include <algorithm>
 using namespace std;
 #define nl "\n"
 #define ll long long
@@ -9,24 +9,20 @@ int arr[100];
 
 // 1. Brute Force TC:O(N^2), SC: O(N)--------------
 
-void findRepeated1(int *arr, int n)
+void findRepeated1(int* arr, int n)
 {
     int same[n];
     int index = 0;
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = i + 1; j < n; j++)
-        {
-            if (arr[i] == arr[j])
-            {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] == arr[j]) {
                 same[index] = arr[i];
                 index++;
             }
         }
     }
 
-    for (int i = 0; i < index; i++)
-    {
+    for (int i = 0; i < index; i++) {
         if (same[i] != same[i + 1])
             cout << same[i] << " ";
     }
@@ -36,11 +32,10 @@ void findRepeated1(int *arr, int n)
 // 2. Sorting Approach TC:O(N^2), SC: O(N)--------------
 
 // Will Not work for all Cases
-void findRepeated2(int *arr, int n)
+void findRepeated2(int* arr, int n)
 {
     sort(arr, arr + n);
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         if (arr[i] == arr[i + 1])
             cout << arr[i] << " ";
     }
@@ -52,13 +47,11 @@ void findRepeated2(int *arr, int n)
 void findRepeated3(int arr[], int n)
 {
     unordered_map<int, int> mp;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         mp[arr[i]]++;
     }
 
-    for (auto val : mp)
-    {
+    for (auto val : mp) {
         if (val.second > 1)
             cout << val.first << " ";
     }
@@ -72,8 +65,7 @@ void findRepeated4(int arr[], int n)
     for (int i = 0; i < n; i++)
         arr[arr[i] % n] = arr[arr[i] % n] + n;
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         if (arr[i] >= n * 2)
             cout << i << " ";
     }

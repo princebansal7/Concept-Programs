@@ -31,6 +31,7 @@ int main()
     int ans;
 
     // ans = SumofArray1(arr, n);
+
     ans = SumofArray2(arr, n);
 
     cout << "Sum: " << ans << nl;

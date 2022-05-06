@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <utility>
-#include <algorithm>
 using namespace std;
 #define nl "\n"
 #define ll long long
@@ -34,8 +34,7 @@ void reverseArray2(int arr[], int n)
     // Way-2
 
     int i = 0, j = n - 1;
-    while (i < j)
-    {
+    while (i < j) {
         swap(arr[i], arr[j]);
         i++;
         j--;
@@ -63,8 +62,7 @@ void reverseArray4(int arr[], int n)
 // 5. Using Recursion =>  TC: O(n), SC: O(n)
 void reverseArray5(int arr[], int n, int start, int end)
 {
-    if (start < end)
-    {
+    if (start < end) {
         swap(arr[start], arr[end]);
         return reverseArray5(arr, n, start + 1, end - 1);
     }

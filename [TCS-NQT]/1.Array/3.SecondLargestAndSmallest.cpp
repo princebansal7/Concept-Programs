@@ -1,6 +1,6 @@
+#include <climits>
 #include <iostream>
 #include <utility>
-#include <climits>
 using namespace std;
 #define nl "\n"
 #define ll long long
@@ -56,14 +56,11 @@ int SecondLargest(int arr[], int n)
 
     int MaxValue = INT_MIN, SecondMaxValue = INT_MIN;
 
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] > MaxValue)
-        {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > MaxValue) {
             SecondMaxValue = MaxValue;
             MaxValue = arr[i];
-        }
-        else if (arr[i] > SecondMaxValue && arr[i] != MaxValue)
+        } else if (arr[i] > SecondMaxValue && arr[i] != MaxValue)
             SecondMaxValue = arr[i];
     }
 
@@ -77,14 +74,11 @@ int SecondSmallest(int arr[], int n)
 
     int MinValue = INT_MAX, SecondMinValue = INT_MAX;
 
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] < MinValue)
-        {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < MinValue) {
             SecondMinValue = MinValue;
             MinValue = arr[i];
-        }
-        else if (arr[i] < SecondMinValue && arr[i] != MinValue)
+        } else if (arr[i] < SecondMinValue && arr[i] != MinValue)
             SecondMinValue = arr[i];
     }
 

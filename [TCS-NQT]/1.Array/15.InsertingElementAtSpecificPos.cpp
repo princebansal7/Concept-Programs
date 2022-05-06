@@ -5,7 +5,7 @@ using namespace std;
 
 int arr[100];
 
-void printArray(int *arr, int n)
+void printArray(int* arr, int n)
 {
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
@@ -15,14 +15,12 @@ void printArray(int *arr, int n)
 int insertAtSpecPos(int arr[], int n, int val, int pos)
 {
     int index = pos - 1;
-    if (index > n)
-    {
+    if (index > n) {
         cout << "invalid index";
         return -1;
     }
     cout << "Inserting " << val << " at the position " << pos << nl;
-    for (int i = n - 1; i >= index; i--)
-    {
+    for (int i = n - 1; i >= index; i--) {
         arr[i + 1] = arr[i];
     }
     arr[index] = val;

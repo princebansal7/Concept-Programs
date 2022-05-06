@@ -3,9 +3,9 @@
 
 */
 
-#include <iostream>
-#include <climits>
 #include <algorithm>
+#include <climits>
+#include <iostream>
 using namespace std;
 #define nl "\n"
 #define ll long long
@@ -18,13 +18,10 @@ int arr[100];
 void maxProductSubArray1(int arr[], int n)
 {
     int ans = INT_MIN;
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = i + 1; j < n; j++)
-        {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
             int product = 1;
-            for (int k = i; k <= j; k++)
-            {
+            for (int k = i; k <= j; k++) {
                 product *= arr[k];
             }
             ans = max(product, ans);
@@ -38,11 +35,9 @@ void maxProductSubArray1(int arr[], int n)
 void maxProductSubArray2(int arr[], int n)
 {
     int ans = arr[0];
-    for (int i = 0; i < n - 1; i++)
-    {
+    for (int i = 0; i < n - 1; i++) {
         int product = arr[i];
-        for (int j = i + 1; j < n; j++)
-        {
+        for (int j = i + 1; j < n; j++) {
             ans = max(product, ans);
             product *= arr[j];
         }
@@ -63,10 +58,8 @@ void maxProductSubArray3(int arr[], int n)
     int product = 1;
     bool isZero = false;
 
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] == 0)
-        {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == 0) {
             product = 1;
             isZero = true;
             continue;
@@ -76,10 +69,8 @@ void maxProductSubArray3(int arr[], int n)
 
     product = 1;
 
-    for (int i = n - 1; i >= 0; i--)
-    {
-        if (arr[i] == 0)
-        {
+    for (int i = n - 1; i >= 0; i--) {
+        if (arr[i] == 0) {
             product = 1;
             isZero = true;
             continue;
@@ -88,12 +79,9 @@ void maxProductSubArray3(int arr[], int n)
     }
 
     int ans;
-    if (isZero)
-    {
+    if (isZero) {
         ans = max(max(leftMaxProd, rightMaxProd), 0);
-    }
-    else
-    {
+    } else {
         ans = max(leftMaxProd, rightMaxProd);
     }
     cout << "Maximum product is: " << ans << nl;
@@ -105,10 +93,9 @@ void maxProductSubArray4(int arr[], int n)
 {
     int product1 = arr[0], product2 = arr[0], ans = arr[0];
 
-    for (int i = 1; i < n; i++)
-    {
-        int temp = max({arr[i], product1 * arr[i], product2 * arr[i]}); // max(), min() with 3 args ? use algorithm header file
-        product2 = min({arr[i], product1 * arr[i], product2 * arr[i]});
+    for (int i = 1; i < n; i++) {
+        int temp = max({ arr[i], product1 * arr[i], product2 * arr[i] }); // max(), min() with 3 args ? use algorithm header file
+        product2 = min({ arr[i], product1 * arr[i], product2 * arr[i] });
         product1 = temp;
 
         ans = max(ans, product1);
