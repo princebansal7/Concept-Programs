@@ -33,7 +33,7 @@ void sortByFreq1(int arr[], int n)
         mp[arr[i]]++;
 
     for (auto val : mp) {
-        while (val.second != 0) { // we just printed the hashmap values
+        while (val.second != 0) { // we just printed the hashmap values in sorted manner
             cout << val.first << " ";
             val.second--;
         }
