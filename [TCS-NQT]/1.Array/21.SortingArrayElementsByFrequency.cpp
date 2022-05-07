@@ -24,6 +24,8 @@ int arr[100];
                  to element's value.
 */
 
+/****         INCOMPLETE              ****/
+
 void sortByFreq1(int arr[], int n)
 {
     map<int, int> mp;
@@ -31,7 +33,7 @@ void sortByFreq1(int arr[], int n)
         mp[arr[i]]++;
 
     for (auto val : mp) {
-        while (val.second != 0) {
+        while (val.second != 0) { // we just printed the hashmap values
             cout << val.first << " ";
             val.second--;
         }
