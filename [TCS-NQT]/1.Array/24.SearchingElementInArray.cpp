@@ -29,7 +29,8 @@ int linearSearch(int arr[], int n, int key)
 int binarySearch(int arr[], int n, int key)
 {
 
-    sort(arr, arr + n);
+    // sort(arr, arr + n); // just making sure..
+
     int idx = -1;
     int s = 0, e = n - 1;
 
