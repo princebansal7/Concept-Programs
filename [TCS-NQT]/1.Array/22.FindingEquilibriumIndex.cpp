@@ -54,7 +54,7 @@ int EquilibriumIndex1(int arr[], int n)
     return -1;
 }
 
-// WAY-2 --------------------------------
+// WAY-2  TC:O(N), SC:O(1)---------------
 
 int EquilibriumIndex2(int arr[], int n)
 {
