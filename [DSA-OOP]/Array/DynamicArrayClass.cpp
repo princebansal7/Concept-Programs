@@ -102,11 +102,11 @@ void DynamicArray::insertElement(int index, int data)
 
 void DynamicArray::deleteElement(int index)
 {
-    if (lastIndex == -1) {
+    if (lastIndex == -1)
         cout << "Empty Array !!" << nl;
-    } else if (index < 0 || index > lastIndex) {
+    else if (index < 0 || index > lastIndex)
         cout << "Invalid Index !!" << nl;
-    } else {
+    else {
         for (int i = index; i < lastIndex; i++) {
             ptr[i] = ptr[i + 1]; // shifting element to left side
         }
