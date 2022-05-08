@@ -8,16 +8,14 @@ using namespace std;
 #define nl "\n"
 #define ll long long
 
-class LinkedList
-{
+class LinkedList {
 private:
-    struct Node
-    {
+    struct Node {
         int data;
-        Node *next;
+        Node* next;
     };
 
-    Node *head;
+    Node* head;
 
 public:
     LinkedList()
@@ -27,7 +25,7 @@ public:
     // TIP: Always make changes in the new node 1st
     void insertAtStart(int val)
     {
-        Node *NewNode = new Node;
+        Node* NewNode = new Node;
         NewNode->data = val;
         NewNode->next = head;
 
@@ -36,31 +34,26 @@ public:
 
     void insertAtEnd(int val)
     {
-        Node *NewNode = new Node;
+        Node* NewNode = new Node;
         NewNode->data = val;
         NewNode->next = NULL;
 
-        if (head == NULL)
-        {
+        if (head == NULL) {
             head = NewNode;
-        }
-        else
-        {
-            Node *temp = head;
+        } else {
+            Node* temp = head;
 
-            while (temp->next != NULL)
-            {
+            while (temp->next != NULL) {
                 temp = temp->next;
             }
             temp->next = NewNode;
         }
     }
 
-    Node *seachNode(int data)
+    Node* seachNode(int data)
     {
-        Node *temp = head;
-        while (temp != NULL)
-        {
+        Node* temp = head;
+        while (temp != NULL) {
             if (temp->data == data)
                 return temp;
             temp = temp->next;
@@ -70,13 +63,10 @@ public:
 
     void deleteFirst()
     {
-        if (head == NULL)
-        {
+        if (head == NULL) {
             cout << "Empty Linked List" << nl;
-        }
-        else
-        {
-            Node *temp = head;
+        } else {
+            Node* temp = head;
             head = temp->next;
             delete temp;
         }
@@ -86,13 +76,11 @@ public:
     {
         if (head == NULL)
             cout << "Empty Linked list" << nl;
-        else
-        {
-            Node *temp1 = head; // will be pointing to last node
-            Node *temp2 = NULL; // will be pointing to 2nd last node
+        else {
+            Node* temp1 = head; // will be pointing to last node
+            Node* temp2 = NULL; // will be pointing to 2nd last node
 
-            while (temp1->next != NULL)
-            {
+            while (temp1->next != NULL) {
                 temp2 = temp1;
                 temp1 = temp1->next;
             }

@@ -9,40 +9,37 @@ using namespace std;
 
 // similar to vector in c++
 
-class DynamicArray
-{
+class DynamicArray {
 private:
     int capacity;
     int lastIndex;
-    int *ptr;
+    int* ptr;
 
 protected:
     void doubleArray() // as Array capacity gets full (insert, append case), we'll double the size of Array
     {
         capacity = 2 * capacity; // capacity now doubled
-        int *ptr2 = new int[capacity];
+        int* ptr2 = new int[capacity];
 
         // copying prev Array data to new doubled capacity Array
-        for (int i = 0; i <= lastIndex; i++)
-        {
+        for (int i = 0; i <= lastIndex; i++) {
             ptr2[i] = ptr[i];
         }
         delete[] ptr; // releasing old array memory
-        ptr = ptr2;   //  now ptr pointing to doubled array
+        ptr = ptr2; //  now ptr pointing to doubled array
     }
 
     void halfArray() // when old array will have half or less than half elements than it's capacity, we'll half the capacity
     {
         capacity = capacity / 2;
-        int *ptr2 = new int[capacity];
+        int* ptr2 = new int[capacity];
 
         // copying prev Array data to new half capacity Array
-        for (int i = 0; i <= lastIndex; i++)
-        {
+        for (int i = 0; i <= lastIndex; i++) {
             ptr2[i] = ptr[i];
         }
         delete[] ptr; // releasing old array memory
-        ptr = ptr2;   //  now ptr pointing to doubled array
+        ptr = ptr2; //  now ptr pointing to doubled array
     }
 
 public:
@@ -88,39 +85,29 @@ void DynamicArray::append(int data)
 
 void DynamicArray::insertElement(int index, int data)
 {
-    if (index < 0 || index > lastIndex + 1)
-    {
+    if (index < 0 || index > lastIndex + 1) {
         cout << "Invalid Index !!" << nl;
-    }
-    else
-    {
+    } else {
         if (lastIndex + 1 == capacity)
             doubleArray();
 
         // shift data towards right (as Array is left alligned)
-        for (int i = lastIndex; i >= index; i--)
-        {
+        for (int i = lastIndex; i >= index; i--) {
             ptr[i + 1] = ptr[i];
         }
         ptr[index] = data; // insert data at given index
-        lastIndex++;       // as one value inserted
+        lastIndex++; // as one value inserted
     }
 }
 
 void DynamicArray::deleteElement(int index)
 {
-    if (lastIndex == -1)
-    {
+    if (lastIndex == -1) {
         cout << "Empty Array !!" << nl;
-    }
-    else if (index < 0 || index > lastIndex)
-    {
+    } else if (index < 0 || index > lastIndex) {
         cout << "Invalid Index !!" << nl;
-    }
-    else
-    {
-        for (int i = index; i < lastIndex; i++)
-        {
+    } else {
+        for (int i = index; i < lastIndex; i++) {
             ptr[i] = ptr[i + 1]; // shifting element to left side
         }
         lastIndex--;
@@ -131,16 +118,11 @@ void DynamicArray::deleteElement(int index)
 
 void DynamicArray::editArray(int index, int newData)
 {
-    if (lastIndex == -1)
-    {
+    if (lastIndex == -1) {
         cout << "Empty Array !!" << nl;
-    }
-    else if (index < 0 || index > lastIndex + 1)
-    {
+    } else if (index < 0 || index > lastIndex + 1) {
         cout << "Invalid Index !!" << nl;
-    }
-    else
-    {
+    } else {
         ptr[index] = newData;
     }
 }
@@ -149,8 +131,7 @@ void DynamicArray::show()
 {
     if (lastIndex == -1)
         cout << "Empty Array!!" << nl;
-    else
-    {
+    else {
         for (int i = 0; i <= lastIndex; i++)
             cout << ptr[i] << " ";
     }
@@ -160,16 +141,11 @@ void DynamicArray::show()
 int DynamicArray::getElement(int index)
 {
     int ans;
-    if (lastIndex == -1)
-    {
+    if (lastIndex == -1) {
         cout << "Empty Array !!" << nl;
-    }
-    else if (index < 0 || index > lastIndex + 1)
-    {
+    } else if (index < 0 || index > lastIndex + 1) {
         cout << "Invalid Index !!" << nl;
-    }
-    else
-    {
+    } else {
         ans = ptr[index];
     }
     return ans;
@@ -177,8 +153,7 @@ int DynamicArray::getElement(int index)
 
 int DynamicArray::search(int data)
 {
-    for (int i = 0; i <= lastIndex; i++)
-    {
+    for (int i = 0; i <= lastIndex; i++) {
         if (ptr[i] == data)
             return i;
     }
@@ -201,8 +176,7 @@ int DynamicArray::getSum()
 int DynamicArray::getMax()
 {
     int maxVal = ptr[0];
-    for (int i = 1; i <= lastIndex; i++)
-    {
+    for (int i = 1; i <= lastIndex; i++) {
         if (maxVal < ptr[i])
             maxVal = ptr[i];
     }
@@ -212,8 +186,7 @@ int DynamicArray::getMax()
 int DynamicArray::getMin()
 {
     int minVal = ptr[0];
-    for (int i = 1; i <= lastIndex; i++)
-    {
+    for (int i = 1; i <= lastIndex; i++) {
         if (minVal > ptr[i])
             minVal = ptr[i];
     }
@@ -252,7 +225,7 @@ int menu()
     return choice;
 }
 
-void printExtraInfo(DynamicArray &arr)
+void printExtraInfo(DynamicArray& arr)
 {
     cout << nl << "_________Dynamic Array Information___________" << nl << nl;
 
@@ -273,11 +246,9 @@ int main()
 
     // Menu Driven Program
 
-    while (1)
-    {
+    while (1) {
 
-        switch (menu())
-        {
+        switch (menu()) {
         case 1:
             cout << "Enter data to append: ";
             cin >> data;
