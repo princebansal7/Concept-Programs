@@ -144,4 +144,9 @@ public:
         }
         cout << nl;
     }
+
+    ~LinkedList()
+    {
+        delete head;
+    }
 };
