@@ -14,7 +14,7 @@ using namespace std;
 
 int main()
 {
-    LinkedList list;
+    SinglyLL list;
     list.insertAtStart(10);
     list.printList();
     list.insertAtEnd(20);

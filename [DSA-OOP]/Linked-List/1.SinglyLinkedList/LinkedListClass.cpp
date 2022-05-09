@@ -7,7 +7,7 @@
 using namespace std;
 #define nl "\n"
 
-class LinkedList {
+class SinglyLL {
 private:
     struct Node {
         int data;
@@ -17,7 +17,7 @@ private:
     Node* head;
 
 public:
-    LinkedList()
+    SinglyLL()
     {
         head = NULL;
     }
@@ -145,7 +145,7 @@ public:
         cout << nl;
     }
 
-    ~LinkedList()
+    ~SinglyLL()
     {
         delete head;
     }
