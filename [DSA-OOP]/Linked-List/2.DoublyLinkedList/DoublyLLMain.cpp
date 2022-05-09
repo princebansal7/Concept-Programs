@@ -12,12 +12,12 @@ int main()
 {
     DoublyLL list;
 
-    // list.insertAtBeg(10);
-    // list.printDll();
-    // list.insertAtBeg(20);
-    // list.printDll();
-    // list.insertAtBeg(30);
-    // list.printDll();
+    list.insertAtBeg(10);
+    list.printDll();
+    list.insertAtBeg(20);
+    list.printDll();
+    list.insertAtBeg(30);
+    list.printDll();
 
     list.insertAtEnd(99);
     list.printDll();
