@@ -59,7 +59,7 @@ public:
         else {
             Node* temp = head;
             head = temp->next;
-            if (temp->next != NULL) // => atleast 2 node exits
+            if (temp->next != NULL) // => atleast 2 node exists
                 temp->next->prev = NULL; // or head->prev = NULL
             delete temp;
         }
