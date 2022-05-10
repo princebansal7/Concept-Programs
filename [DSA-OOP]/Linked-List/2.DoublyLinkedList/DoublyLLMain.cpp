@@ -26,6 +26,15 @@ int main()
     list.insertAtEnd(97);
     list.printDll();
 
+    list.deleteFirst();
+    list.printDll();
+    list.deleteFirst();
+    list.printDll();
+    list.deleteFirst();
+    list.printDll();
+    list.deleteFirst();
+    list.printDll();
+
     cout << nl << "Printing in Reverse" << nl << nl;
     list.printReverseDll();
 
