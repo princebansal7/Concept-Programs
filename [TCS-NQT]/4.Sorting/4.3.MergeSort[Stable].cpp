@@ -22,7 +22,7 @@ int arr[100];
 void mergeSubArray(int arr[], int low, int mid, int high)
 {
     int size1 = mid - low + 1, size2 = high - mid;
-    int left[size1];  // for left sorted subarray
+    int left[size1]; // for left sorted subarray
     int right[size2]; // for right sorted subarray
 
     for (int i = 0; i < size1; i++) // putting values in auxillary left subarray
@@ -34,19 +34,16 @@ void mergeSubArray(int arr[], int low, int mid, int high)
     int i = 0, j = 0;
     int index = low; // beacause making changes in the same array
 
-    while (i < size1 and j < size2)
-    {
+    while (i < size1 and j < size2) {
         if (left[i] <= right[j])
             arr[index++] = left[i++]; // putting values back into original array
         else
             arr[index++] = right[j++];
     }
-    while (i < size1)
-    {
+    while (i < size1) {
         arr[index++] = left[i++];
     }
-    while (j < size2)
-    {
+    while (j < size2) {
         arr[index++] = right[j++];
     }
 }
