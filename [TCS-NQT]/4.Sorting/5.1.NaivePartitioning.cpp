@@ -40,6 +40,7 @@ int arr[100];
 
 int naivePartition(int arr[], int n, int low, int high, int pivotIndex)
 {
+    // Will be doing asap
 
     return;
 }
