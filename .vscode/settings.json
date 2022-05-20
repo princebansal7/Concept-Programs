@@ -92,4 +92,5 @@
     "editor.tokenColorCustomizations": {
         "comments": "#61615b"
     },
+    "workbench.colorTheme": "Community Material Theme Darker High Contrast",
 }
