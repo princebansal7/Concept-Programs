@@ -90,7 +90,7 @@
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "C_Cpp.clang_format_fallbackStyle": "WebKit",
     "editor.tokenColorCustomizations": {
-        "comments": "#61615b"
+        "comments": "#e71396"
     },
     "code-runner.executorMap": {
         "cpp":"cd $dir && g++ -std=c++17 $fileName -o $fileNameWihoutExt && ./$fileNameWihoutExt && rm ./$fileNameWihoutExt",

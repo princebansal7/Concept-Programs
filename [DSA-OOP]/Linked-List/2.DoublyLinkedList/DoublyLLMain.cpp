@@ -26,17 +26,48 @@ int main()
     list.insertAtEnd(97);
     list.printDll();
 
-    list.deleteFirst();
-    list.printDll();
-    list.deleteFirst();
-    list.printDll();
-    list.deleteFirst();
-    list.printDll();
-    list.deleteFirst();
+    // list.deleteFirst();
+    // list.printDll();
+    // list.deleteFirst();
+    // list.printDll();
+    // list.deleteFirst();
+    // list.printDll();
+    // list.deleteFirst();
+    // list.printDll();
+
+    // list.deleteEnd();
+    // list.printDll();
+    // list.deleteEnd();
+    // list.printDll();
+    // list.deleteEnd();
+    // list.printDll();
+    // list.deleteEnd();
+    // list.printDll();
+    // list.deleteEnd();
+    // list.printDll();
+    // list.deleteEnd();
+    // list.printDll();
+
+    list.insertAfter(99, 69);
     list.printDll();
 
-    cout << nl << "Printing in Reverse" << nl << nl;
-    list.printReverseDll();
+    // cout << nl << "Printing in Reverse" << nl << nl;
+    // list.printReverseDll();
+
+    list.DeleteSpec(30);
+    list.printDll();
+    list.DeleteSpec(20);
+    list.printDll();
+    list.DeleteSpec(10);
+    list.printDll();
+    list.DeleteSpec(99);
+    list.printDll();
+    list.DeleteSpec(69);
+    list.printDll();
+    list.DeleteSpec(97);
+    list.printDll();
+    list.DeleteSpec(69);
+    list.printDll();
 
     return 0;
 }
