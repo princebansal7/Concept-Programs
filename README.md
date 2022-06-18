@@ -2,7 +2,7 @@
 
 ### ABOUT XOR (^) Operator:
 
-    ```
+    
     1. XOR of 2 Same = 0
     2. XOR of 2 Differents = 1
         eg: 1^0 = 1
@@ -25,4 +25,4 @@
             4^4^4 = 4
             4^4^4^0 = 4
             4^4^4^4 = 0
-    ```
+    
