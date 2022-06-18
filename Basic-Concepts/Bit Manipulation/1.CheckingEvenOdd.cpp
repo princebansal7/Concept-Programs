@@ -7,6 +7,7 @@ using namespace std;
 #define nl '\n'
 #define ll long long
 
+// using Bit Manipulation
 int main()
 {
     int a;
