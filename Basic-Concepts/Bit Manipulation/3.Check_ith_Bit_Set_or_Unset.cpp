@@ -29,6 +29,9 @@ using namespace std;
 //                      ________
 //                        0100  => non zero value => ith bit is 1 (set), otherwise it's 0 (unset)
 
+// NOTE: Here ith bit is the rightmost bit (which starts from 0 internally in systems)
+//      so, if in question they say that i starts from 1, then simply replace i with i-1
+
 int main()
 {
     int num, i;
