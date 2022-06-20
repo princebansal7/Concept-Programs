@@ -101,8 +101,9 @@ public:
             NewNode->data = value;
             NewNode->next = temp->next;
             temp->next = NewNode;
-        } else
+        } else {
             cout << "Element not Found" << nl;
+        }
     }
 
     // Will delete the 1st occurence if multple occurences of elements present.
