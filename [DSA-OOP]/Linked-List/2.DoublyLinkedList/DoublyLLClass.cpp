@@ -169,6 +169,7 @@ public:
 
     ~DoublyLL()
     {
-        delete head;
+        while (head)
+            deleteFirst();
     }
 };

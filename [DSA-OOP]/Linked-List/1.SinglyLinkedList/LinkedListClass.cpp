@@ -148,6 +148,7 @@ public:
 
     ~SinglyLL()
     {
-        delete head;
+        while (head)
+            deleteFirst();
     }
 };
