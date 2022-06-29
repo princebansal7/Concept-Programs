@@ -42,5 +42,8 @@ int main()
     cout << "Moves for moving " << disks << " disks from tower A to C" << nl;
     TOH::TOHMoves(disks, 'A', 'B', 'C');
 
+    cout << nl << nl;
+    TOH::TOHMoves(4, 'A', 'B', 'C');
+
     return 0;
 }
