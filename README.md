@@ -34,7 +34,7 @@
         3.But not an Optimal algo in term of memory writes, Cycle sort is more optimal in term   of memory writes
         4.TC: O(N^2) for all cases
         5.Base fot Heap Sort
-        1. Non Adaptive and Unstable sorting algo
+        6. Non Adaptive and Unstable sorting algo
   </details>
 
   <details>
@@ -64,7 +64,7 @@
       4. Not InPlace ALgo but Variants like Block merge sort algo take SC:O(1) and TC: O(N(logN))
       5. Well suited for External Sorting
       6. Quick Sort outforms Merge sort in case of Arrays
-      Preq: You should know How Merge Two Sorted Arrays. [Codes in TCS NQT ****/ DSA OOP]
+      Preq: You should know How Merge Two Sorted Arrays. [Codes in TCS NQT / DSA OOP folders]
 
 </details>
 </blockquote>
