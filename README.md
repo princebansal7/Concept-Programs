@@ -40,7 +40,7 @@
   <details>
     <summary> INSERTION SORT (Inplace and Stable sorting algorithm)</summary>
 
-        1.Idea is, we maintain we parts,
+        1.Idea is, we maintain 2 parts,
             a. Sorted Part
             b. Unsorted Part
 
