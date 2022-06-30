@@ -2,7 +2,7 @@
 
 
 <details>
-<summary>Sorting Algos</summary>
+<summary>About Sorting Algos [Codes in TCS NQT / DSA OOP folders]</summary>
 
 <blockquote>
 
@@ -64,7 +64,7 @@
       4. Not InPlace ALgo but Variants like Block merge sort algo take SC:O(1) and TC: O(N(logN))
       5. Well suited for External Sorting
       6. Quick Sort outforms Merge sort in case of Arrays
-      Preq: You should know How Merge Two Sorted Arrays. [Codes in TCS NQT / DSA OOP folders]
+      Preq: You should know How Merge Two Sorted Arrays.
 
 </details>
 </blockquote>
