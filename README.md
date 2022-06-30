@@ -72,7 +72,7 @@
 
 
 <details>
-<summary> ABOUT XOR </summary>
+<summary> About XOR </summary>
 
 
 #### ABOUT XOR (^) Operator:
