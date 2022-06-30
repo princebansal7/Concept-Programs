@@ -13,8 +13,8 @@ int main()
 
     // Sorting::BubbleSort(arr, size);
     // Sorting::ModifiedBubbleSort(arr, size);
-    // Sorting::insertionSort(arr, size);
     // Sorting::selectionSort(arr, size);
+    // Sorting::insertionSort(arr, size);
     Sorting::mergeSort(arr, 0, size - 1);
 
     cout << "After Sorting: " << nl;
