@@ -90,9 +90,12 @@
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "C_Cpp.clang_format_fallbackStyle": "WebKit",
     "editor.tokenColorCustomizations": {
-        "comments": "#747272"
+        "comments": "#2cc03f"
     },
     "code-runner.executorMap": {
         "cpp":"cd $dir && g++ -std=c++17 $fileName -o $fileNameWihoutExt && ./$fileNameWihoutExt && rm ./$fileNameWihoutExt",
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
 }
