@@ -11,7 +11,7 @@ using namespace std;
 // when we maintain two pointers head and last.
 // but still deletion at tail is not possible in O(1), as we can't get hold of prev node for deleting
 // the Tail.
-// That's we use DOUBLY LINKED LIST
+// That's why we use DOUBLY LINKED LIST
 
 class DequeueLL {
     struct Node {
