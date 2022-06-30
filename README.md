@@ -1,6 +1,10 @@
 # DSA-OOP, TCS-NQT, Basic Conceptual programms
 
-### ABOUT XOR (^) Operator:
+<details>
+<summary> ABOUT XOR </summary>
+
+
+#### ABOUT XOR (^) Operator:
 
     
     1. XOR of 2 Same = 0
@@ -25,4 +29,22 @@
             4^4^4 = 4
             4^4^4^0 = 4
             4^4^4^4 = 0
-    
+</details>
+
+<details>
+<summary>About Queues</summary>
+
+There are many variations of Queue:
+1. Dequeue (IMP)
+2. Priority Queue (IMP): (every element have priority, one highest priority one gets deleted 1st always)
+3. Insertion Restrcited queue (insertion happens at only one end, deletions happens on both)
+4. Deletion Restricted queue  (deletion happens at only one end, insertuons happens on both)
+
+----------Dequeue (pronounced as Deck)-------------------
+Alternative names:Head-Tail queue
+Double ended Queue
+Insertion and Deletion is Possible on Both ends
+
+------------------------------------------------------------
+
+</details>
