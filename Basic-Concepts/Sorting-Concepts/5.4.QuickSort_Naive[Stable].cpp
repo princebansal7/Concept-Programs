@@ -71,7 +71,7 @@ int naivePartition(int arr[], int low, int high)
     return newPivotIndex;
 }
 
-//----Quick Sort (using Lomuto partition)-------------------
+//----Quick Sort (using Naive partition)-------------------
 
 void quickSort(int arr[], int low, int high)
 {
