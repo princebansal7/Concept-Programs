@@ -2,7 +2,7 @@
 
 
 <details>
-<summary>About Sorting Algos [ <a href="/Basic-Concepts/Sorting-Concepts" target="_blank"> Codes </a> ]</summary>
+<summary>About Sorting Algos [ <a href="/Basic-Concepts/Sorting-Concepts" target="_blank">Codes</a> ]</summary>
 
 <br>
 <blockquote>
@@ -188,7 +188,7 @@
 
 
 <details>
-<summary> About XOR </summary>
+<summary> About XOR [<a href="/Basic-Concepts/Bit Manipulation" target="_blank">Codes</a>]</summary>
 
 
 #### ABOUT XOR (^) Operator:
