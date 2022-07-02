@@ -77,7 +77,7 @@
    
       2. Lomuto Partition [Unstable]
    
-      3. Haore Partition [Unstable]  (fastest)
+      3. Haore Partition [Unstable]  (fastest: 3 times fatser than Lomuto's) 
   <details>
    <summary>Naive Partition</summary>
 
