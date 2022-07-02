@@ -2,7 +2,7 @@
 
 
 <details>
-<summary>About Sorting Algos [TCS NQT | Basic-Concepts]</summary>
+<summary>About Sorting Algos [ <a href="/Concept_Programs/Basic-Concepts/Sorting-Concepts" target="_blank"> Codes </a> ]</summary>
 
 <br>
 <blockquote>
@@ -164,6 +164,24 @@
 
    </bockquote>    
 </details>
+
+<details>
+<summary>Quick Sort</summary>
+
+    - Divide and Conqure Algo
+    - Worst time complexity: O(N^2)
+    - Despite O(N^2) TC, It is Considered faster due to he following:
+      1. In-Place (ignoring recursion call stack)
+      2. Cache Friendly
+      3. Average case TC: O(N.logN)
+      4. Tail recursion (recursive call is made at last)
+    - Partion function is the key function (Naive (for stable), Lomuto , Hoare (for efficiency, generally used))
+    - sort() in STL use Intro sort (hybrid of heap, insertion, quick sort)
+    - When stability is not required Quick sort is best
+    - When stability required Merge sort used
+
+</details>
+
 </blockquote>
 <br>
 </details>
