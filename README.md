@@ -2,7 +2,7 @@
 
 
 <details>
-<summary>About Sorting Algos [ <a href="/Concept_Programs/Basic-Concepts/Sorting-Concepts" target="_blank"> Codes </a> ]</summary>
+<summary>About Sorting Algos [ <a href="/Basic-Concepts/Sorting-Concepts" target="_blank"> Codes </a> ]</summary>
 
 <br>
 <blockquote>
