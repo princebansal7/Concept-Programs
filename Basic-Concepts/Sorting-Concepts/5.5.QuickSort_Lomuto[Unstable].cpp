@@ -21,7 +21,7 @@ int lomutoPartition(int arr[], int low, int high)
 {
 
     int i = low - 1; // for maintianing smaller elements window
-    int pivot = arr[high]; // pivot is always the last element
+    int pivot = arr[high]; // pivot is always the last element OR can use random(low,right) to generate randomly then swap with last element
 
     for (int j = low; j <= high - 1; j++) {
 

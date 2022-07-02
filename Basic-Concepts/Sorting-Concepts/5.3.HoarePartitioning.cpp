@@ -73,8 +73,10 @@ int hoarePartition(int arr[], int low, int high)
 int customPivotHoarePartition(int arr[], int low, int high, int pivotIndex)
 {
 
-    // Make the custom pivot element as first element
+    // pivot is always the first element OR can use random(low,right) to generate randomly then swap with first element
+    // eg: pivotIndex = low + (rand() % high) , then Swap
 
+    // Make the custom pivot element as first element
     swap(arr[pivotIndex], arr[low]);
 
     // now apply normal hoare partition

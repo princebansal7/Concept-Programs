@@ -58,8 +58,10 @@ int lomutoPartition(int arr[], int low, int high)
 int customPivotLumotoPartition(int arr[], int low, int high, int pivotIndex)
 {
 
-    // Make the custom pivot element as last element
+    // pivot is always the last element OR can use random(low,right) to generate randomly then swap with last element
+    // eg: pivotIndex = low + (rand() % high) , then Swap
 
+    // Make the custom pivot element as last element
     swap(arr[pivotIndex], arr[high]);
 
     // now apply normal lomuto partition

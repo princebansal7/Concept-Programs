@@ -20,7 +20,7 @@ void printArray(int arr[], int size)
 int hoarePartition(int arr[], int low, int high)
 {
     int i = low - 1, j = high + 1;
-    int pivot = arr[low]; // pivot is always the 1st element
+    int pivot = arr[low]; // pivot is always the 1st element or OR can use random(low,right) to generate randomly then swap with first element
 
     while (true) {
         do {
