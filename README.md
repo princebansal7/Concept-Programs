@@ -205,8 +205,8 @@
             - So, when given array is already sorted then, Both the Partition algo will goes into the *Worst Case* 
             - So, if we are writing the sort function for Standard library then, for the users who give always sorted array as input, our sort function will works slower => this situation is called **Advisory analysis**, as we don't want a situation where our algorithm fails.
             - So, in pratical implementation a random function is used to generate a random pivot 
-
-   ``pivotIndex = low + (rand() % high)`` 
+            
+            ``pivotIndex = low + (rand() % high)`` 
     
             - we already know how to handle the case for random pivot in case of Lomuto and Hoare's partitions
 
