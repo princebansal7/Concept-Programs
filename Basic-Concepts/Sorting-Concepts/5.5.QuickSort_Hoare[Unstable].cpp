@@ -46,7 +46,7 @@ void quickSort(int arr[], int low, int high)
 
     if (low < high) {
         int pivotIndex = hoarePartition(arr, low, high);
-        quickSort(arr, low, pivotIndex); // we start from pivotIndex and not from pivotIndex-1 like lomuto
+        quickSort(arr, low, pivotIndex); // we go till pivotIndex and not from pivotIndex-1 like lomuto
         quickSort(arr, pivotIndex + 1, high);
     }
 }
