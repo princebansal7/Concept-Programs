@@ -188,7 +188,7 @@
 
 
 <details>
-<summary> About XOR [<a href="/Basic-Concepts/Bit Manipulation" target="_blank">Codes</a>]</summary>
+<summary> About XOR [ <a href="/Basic-Concepts/Bit Manipulation" target="_blank">Codes</a> ]</summary>
 
 
 #### ABOUT XOR (^) Operator:
