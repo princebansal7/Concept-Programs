@@ -168,7 +168,7 @@
 <details>
 <summary>Quick Sort</summary>
 
-    - Divide and Conqure Algo
+    - Divide and Conquer Algo
     - Worst time complexity: O(N^2)
     - Despite O(N^2) TC, It is Considered faster due to he following:
       1. In-Place (ignoring recursion call stack)
