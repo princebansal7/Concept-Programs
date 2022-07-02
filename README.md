@@ -2,12 +2,13 @@
 
 
 <details>
-<summary>About Sorting Algos [Codes in TCS NQT / DSA OOP folders]</summary>
+<summary>About Sorting Algos [TCS NQT | Basic-Concepts]</summary>
 
+<br>
 <blockquote>
 
 <details>
-<summary>BUBBLE SORT (Inplace and Stable sorting algorithm)</summary>
+<summary>Bubble Sort (Inplace and Stable sorting algorithm)</summary>
 
         1.Swaps adjacent elements only if a[i]>a[i+1] => keeps the order same as
           original array => Stable sorting algo
@@ -25,7 +26,7 @@
 </details>
 
 <details>
-  <summary> SELECTION SORT (Inplace and Unstable sorting algorithm)</summary>
+  <summary> Selection Sort (Inplace and Unstable sorting algorithm)</summary>
 
         1.Idea is, find out the minimum element and put at the 1st position, 2nd min at 2nd pos and
         repeat the process till end => order of elements can be changed=> Unstable sorting algo
@@ -38,7 +39,7 @@
   </details>
 
   <details>
-    <summary> INSERTION SORT (Inplace and Stable sorting algorithm)</summary>
+    <summary> Insertion Sort (Inplace and Stable sorting algorithm)</summary>
 
         1.Idea is, we maintain 2 parts,
             a. Sorted Part
@@ -56,7 +57,7 @@
         7.Adbaptable and Stable algo
 </details>
 <details>
-   <summary>MERGE SORT</summary>
+   <summary>Merge Sort</summary>
 
       1. Divide and Conquer and Merge
       2. Stable Algo => Mantains Order of Original equal items
@@ -67,7 +68,104 @@
       Preq: You should know How Merge Two Sorted Arrays.
 
 </details>
+
+<details>
+   <summary>Partitioning Logics</summary>
+   <blockquote>
+
+      1. Naive Partition [Stable] (slowest)
+   
+      2. Lomuto Partition [Unstable]
+   
+      3. Haore Partition [Unstable]  (fastest)
+  <details>
+   <summary>Naive Partition</summary>
+
+      - Undersatnding Naive Partition [Stable]
+            1. Here we have an array and index of pivot element
+            2. we'll put all the smaller or equal values to the left side of pivot.
+            3. then, we'll put pivot element at it's correct position
+            4. then we'll put all the greater elements to right of pivot
+            5. finally we'll return the index of last occurence of pivot element. (last occurence for the case
+               when have muliple same elements)
+
+            eg: I/P: arr = [3,6,12,10,7], p = 5 (pivot element index => 7 is pivot)
+
+               =>    [3,6,7,12,10]  (not necessary that left, right part of pivot will be in sorted order)
+                           or
+                     [6,3,7,12,10]
+                           or
+                      ...........
+               O/P: 2 (new pivot element i.e, 7's index)
+
+            eg: I/P: arr = [2,7,8,3,7], p = 1
+                => [2,3,7,7,8]
+                O/P: 3 (index of last occurence of pivot)
+      
+      
+  </details>
+
+  <details>
+   <summary>Lomuto Partition</summary>
+
+   - Requires only 1 traversal => TC: O(N)
+   - Requires Constant Extra Space => SC: O(1)
+
+    WORKING:
+        1. Here Also we are given array, low, high index as input
+        2. Unlike Naive partition where we get pivot element's index as input,
+           in Lomuto partition we always consider Last element as our Pivot element. ( will also
+           see what to do if not last element is pivot)
+        3. 1st we traverse array from low to high-1 (as High is pivot element, so before that)
+        4. If element is smaller than pivot, increase window size of smaller elements by swapping (see in code)
+
+        NOTE: (Handling case when pivot is not last element)
+
+        - if custom pivot element is given, then we simply swap that pivot with last element
+          and implement the lomutoPartition in similar manner.
+          
+  </details>
+
+  <details>
+   <summary>Hoare Partition</summary>
+
+   - Requires only 1 traversal => TC: O(N)
+   - Requires Constant Extra Space => SC: O(1)
+
+    WORKING:
+        1. Here Also we are given array, low, high index as input
+        2. Unlike Naive partition where we get pivot element's index as input,
+           in Hoare's partition we always consider 1st element as our Pivot element. ( will also
+           see what to do if not last element is pivot)
+        3. we use two pointer i (low-1), j (high+1)
+        4. we move i and j such that, i stops when element is gretaer or equal to pivot element
+           and j stops when element is less than the pivot element, then if i and j didn't cross eacch other
+           then we simply swaps the current arr[i] and arr[j] otherwise we return j (index of last occurrence
+           of pivot element)
+        5. You'll observe that elements from low to j are smaller and j+1 to high are greater => we succesfully
+           partitioned the array
+
+        NOTE 1:
+              - Difference b/w Lomuto and Hoare partition is, in Lomuto it puts the pivot at it's correct position
+                but in Hoare it doesn't put the pivot at it's correct position rather it just returns the index where
+                it should be if placed at correct position.
+
+              - So that's where lomuto partition is takes edge from Hoare's as it sorts that pivot element during partitioning
+              - Then why Hoare's partition is better ? it takes less number of comparisons so on avaerage works better than
+                lomuto's partition
+
+        NOTE 2: (Handling case when pivot is not last element)
+
+        - if custom pivot element is given, then we simply swap that pivot with last element
+          and implement the hoarePartition in similar manner.
+
+      
+  </details>
+
+   </bockquote>    
+</details>
 </blockquote>
+<br>
 </details>
 
 
