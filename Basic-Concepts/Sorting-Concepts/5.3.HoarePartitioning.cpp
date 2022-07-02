@@ -21,7 +21,8 @@ using namespace std;
            and j stops when element is less than the pivot element, then if i and j didn't cross eacch other
            then we simply swaps the current arr[i] and arr[j] otherwise we return j (index of last occurrence
            of pivot element)
-        5. You'll observe that elements from low to j are smaller and j+1 to high are greater => we succesfully
+        5. This Algo ensures that elements on the left side are smaller or equal to elements on the right side
+        6. You'll observe that elements from low to j are smaller and j+1 to high are greater => we succesfully
            partitioned the array
 
         NOTE 1:
