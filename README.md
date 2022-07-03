@@ -1,4 +1,4 @@
-# DSA-OOP, TCS-NQT, Basic Conceptual programms
+# Basic Concepts, DSA-OOP, TCS-NQT Programs 
 
 
 <details>
