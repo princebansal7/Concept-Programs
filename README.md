@@ -251,7 +251,7 @@
 
 
 <details>
-<summary>About Queues</summary>
+<summary>About Queues [ <a href="/[DSA-OOP]" target="_blank">Codes</a> ]</summary>
 
    - There are many variations of Queue:
 
