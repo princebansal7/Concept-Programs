@@ -193,7 +193,8 @@
            - Mostly it's said that Quick sort is In-Place but it's arguable, if by **in-place is defined as an algo which takes constant extra space**, then Quick Sort is definitly not 'In-Place', the partition function of quick sort is in-place if Hoare's or Lomuto's partitioning is used.
            - If you are considering Quick sort as an algorithm, then it requires extra space for Recursion
              call stack.
-           - **In-Place Algo 2nd definition:** if your algorithm is *not copying input elements to an     auxillary space* then this algo is in-place, so by this definition Quick Sort is In-place as it doesn't copy the input elements to another space, it only needs the extra space for recusion call stack.
+           - **In-Place Algo 2nd definition:** if your algorithm is *not copying input elements to an auxillary space then this algo is in-place, so by this definition Quick Sort is In-place as it doesn't copy the input elements to another space, it only needs the extra space for recusion call stack.
+           - Quick is "Tail Recursive" (read in Recursion folder)
            - Space required in recursion call stack (In Lomuto's or Hoare's):
               - Worst Case: theta(N)
               - Best Case: O(logN) (As height in case of equal parts is: O(logN))
@@ -270,6 +271,29 @@
 
    <details>
    <summary>Indirect Recursion (Not very Common)</summary>
+   <blockquote>
+      
+      void fun1(){
+         .....
+         .....
+         fun2();
+         .....
+         .....
+      }
+
+      void fun2(){
+         .....
+         .....
+         fun1();
+         .....
+         .....
+      }
+
+   </blockquote>
+   </details>
+
+   <details>
+   <summary>Tail Recursion [<a href="/Basic-Concepts/Recursion/5.TailRecursion.cpp" target="_blank">Code1</a> <a href="/Concept_Programs/Basic-Concepts/Recursion/6.Factorial.cpp" target="_blank">Code2</a> ]</summary> 
    <blockquote>
       
       void fun1(){
