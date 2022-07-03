@@ -254,7 +254,7 @@
 <blockquote>
    <br>
    <details>
-   <summary>- Direct Recursion</summary>
+   <summary>Direct Recursion</summary>
    <blockquote>
    
       void fun1(){
@@ -269,7 +269,7 @@
    </details>
 
    <details>
-   <summary>- Indirect Recursion (Not very Common)</summary>
+   <summary>Indirect Recursion (Not very Common)</summary>
    <blockquote>
       
       void fun1(){
