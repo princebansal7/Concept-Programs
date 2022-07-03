@@ -248,11 +248,55 @@
             4^4^4^4 = 0
 </details>
 
+<details>
+<summary>About Recursion [ <a href="/Basic-Concepts/Recursion" target="_blank">Codes</a> ]</summary>
 
+<blockquote>
+   <details>
+   <summary>1. Direct Recursion</summary>
+   <blockquote>
+   
+      void fun1(){
+         .....
+         .....
+         fun1();
+         .....
+         .....
+      }
+      
+   </blockquote>
+   </details>
+
+   <details>
+   <summary>2. Indirect Recursion (Not very Common)</summary>
+   <blockquote>
+      
+      void fun1(){
+         .....
+         .....
+         fun2();
+         .....
+         .....
+      }
+
+      void fun2(){
+         .....
+         .....
+         fun1();
+         .....
+         .....
+      }
+
+   </blockquote>
+   </details>
+   
+</blockquote>
+</details>
 
 <details>
 <summary>About Queues [ <a href="/[DSA-OOP]" target="_blank">Codes</a> ]</summary>
 
+<blockquote>
    - There are many variations of Queue:
 
      1. Dequeue (IMP)
@@ -263,5 +307,6 @@
         - Alternative names:Head-Tail queue
         - Double ended Queue
         - Insertion and Deletion is Possible on Both ends
+</blockquote>
 </details>
 
