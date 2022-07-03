@@ -252,6 +252,7 @@
 <summary>About Recursion [ <a href="/Basic-Concepts/Recursion" target="_blank">Codes</a> ]</summary>
 
 <blockquote>
+   <br>
    <details>
    <summary>1. Direct Recursion</summary>
    <blockquote>
