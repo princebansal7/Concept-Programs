@@ -293,7 +293,7 @@
    </details>
 
    <details>
-   <summary>Tail Recursion [ <a href="/Basic-Concepts/Recursion/5.TailRecursion.cpp" target="_blank">Code1</a> <a href="/Concept_Programs/Basic-Concepts/Recursion/6.Factorial.cpp" target="_blank">Code2</a> ]</summary> 
+   <summary>Tail Recursion [ <a href="/Basic-Concepts/Recursion/5.TailRecursion.cpp" target="_blank">Code1,</a> <a href="/Concept_Programs/Basic-Concepts/Recursion/6.Factorial.cpp" target="_blank">Code2</a> ]</summary> 
    <blockquote>
       
       // Tail Recursion takes less time for in modern compilers
@@ -376,7 +376,7 @@
       //    2. In Tree Traversals Preorder, Inorder traversal are tail recursive but Post order traversal is not.
       //       that's why in interviews prefer Pre or In order traversal if can apply instead or post order traversal.
       //       eg: when finding sum of all the nodes in a tree
-      //    3. factorial function isn't tail recursive by default but we can make it tail recusive. see in next 6.Factorial.cpp
+      //    3. factorial function isn't tail recursive by default but we can make it tail recusive. see in Code2 or 6.Factorial.cpp
 
 
    </blockquote>
