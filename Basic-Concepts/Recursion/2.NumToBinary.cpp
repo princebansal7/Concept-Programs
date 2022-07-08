@@ -7,6 +7,7 @@ using namespace std;
 #define nl '\n'
 
 // prints number's binary
+
 // 1. dividing the number
 // 2. waiting for remainder
 // 3. printing remainder in reverse automatically using recursion
