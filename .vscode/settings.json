@@ -88,7 +88,7 @@
         "variant": "cpp"
     },
     "editor.defaultFormatter": "ms-vscode.cpptools",
-    "C_Cpp.clang_format_fallbackStyle": "WebKit",
+    "C_Cpp.clang_format_fallbackStyle": "Webkit",
     "editor.tokenColorCustomizations": {
         "comments": "#2cc03f"
     },
