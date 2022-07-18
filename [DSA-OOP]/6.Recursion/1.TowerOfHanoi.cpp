@@ -11,36 +11,39 @@ using namespace std;
 //              A (source)
 //              B (auxillary / helper)
 //              C (destination)
+
+// NOTE : TOH(dics, source_tower, helper_tower, destination_tower)
+
 // Rules:
-//       1. Move all the disks from tower A to C.
-//       2. Bigger disks can't be on the smaller ones.
+//       1. Move all the dics from tower A to C.
+//       2. Bigger dics can't be on the smaller ones.
 //       3. You can move only one disk at a time only.
-//       4. you can't place disks anywhere other then the towers themselves.
+//       4. you can't place dics anywhere other then the towers themselves.
 
 // Solution - Using Recursion:
-//           1. 1st move n-1 disks from tower A to tower B => towerC becomes helper
+//           1. 1st move n-1 dics from tower A to tower B => towerC becomes helper
 //           2. then move nth disk from tower A to tower C
-//           3. at last move those n-1 disks from tower B to tower C => towerA becomes helper
+//           3. at last move those n-1 dics from tower B to tower C => towerA becomes helper
 
 class TOH {
 public:
-    static void TOHMoves(int disks, char towerA, char towerB, char towerC)
+    static void TOHMoves(int dics, char towerA, char towerB, char towerC)
     {
-        if (disks > 0) {
-            TOHMoves(disks - 1, towerA, towerC, towerB);
+        if (dics > 0) {
+            TOHMoves(dics - 1, towerA, towerC, towerB);
             cout << towerA << " -> " << towerC << nl;
-            TOHMoves(disks - 1, towerB, towerA, towerC);
+            TOHMoves(dics - 1, towerB, towerA, towerC);
         }
     }
 };
 
 int main()
 {
-    int disks;
-    cout << "Enter disks: ";
-    cin >> disks;
-    cout << "Moves for moving " << disks << " disks from tower A to C" << nl;
-    TOH::TOHMoves(disks, 'A', 'B', 'C');
+    int dics;
+    cout << "Enter dics: ";
+    cin >> dics;
+    cout << "Moves for moving " << dics << " dics from tower A to C" << nl;
+    TOH::TOHMoves(dics, 'A', 'B', 'C');
 
     cout << nl << nl;
     TOH::TOHMoves(4, 'A', 'B', 'C');

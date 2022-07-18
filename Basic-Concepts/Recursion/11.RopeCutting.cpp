@@ -12,8 +12,11 @@ using namespace std;
 // eg: INPUT: n=5, a=2, b=5, c=1
 //     OUTPUT: 5
 //     (maximum pieces we can cut with allowed length is 5 where each piece is of length c i.e, 1)
-
 // corner case: n=9, a=2, b=2, c=2
+
+// TC: depends on n,a,b,c
+// O(3^n), better solution is using DP
+
 int maxRopePieces(int n, int a, int b, int c)
 {
     if (n == 0)
@@ -22,7 +25,7 @@ int maxRopePieces(int n, int a, int b, int c)
         return -1;
     int ans = max({ maxRopePieces(n - a, a, b, c), maxRopePieces(n - b, a, b, c), maxRopePieces(n - c, a, b, c) });
 
-    if (ans == -1)
+    if (ans == -1) // for handling corner cases
         return -1;
     return ans + 1;
 }
