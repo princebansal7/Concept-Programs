@@ -38,6 +38,27 @@ private:
         }
     }
 
+    static int hoarePartition(int arr[], int low, int high)
+    {
+        int i = low - 1, j = high + 1;
+        int pivot = arr[low]; // pivot is always the 1st element or OR can use random(low,right) to generate randomly then swap with first element
+
+        while (true) {
+            do {
+                i++;
+            } while (arr[i] < pivot);
+
+            do {
+                j--;
+            } while (arr[j] > pivot);
+
+            if (i >= j)
+                return j;
+
+            swap(arr[i], arr[j]);
+        }
+    }
+
 public:
     static void BubbleSort(int arr[], int n)
     {
@@ -103,6 +124,16 @@ public:
             mergeSort(a, left, mid);
             mergeSort(a, mid + 1, right);
             mergeSubArray(a, left, mid, right);
+        }
+    }
+
+    static void quickSort(int arr[], int low, int high)
+    {
+
+        if (low < high) {
+            int pivotIndex = hoarePartition(arr, low, high);
+            quickSort(arr, low, pivotIndex); // we go till pivotIndex and not pivotIndex-1 like lomuto
+            quickSort(arr, pivotIndex + 1, high);
         }
     }
 };

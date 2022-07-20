@@ -15,7 +15,8 @@ int main()
     // Sorting::ModifiedBubbleSort(arr, size);
     // Sorting::selectionSort(arr, size);
     // Sorting::insertionSort(arr, size);
-    Sorting::mergeSort(arr, 0, size - 1);
+    // Sorting::mergeSort(arr, 0, size - 1);
+    Sorting::quickSort(arr, 0, size - 1);
 
     cout << "After Sorting: " << nl;
     for (int i = 0; i < size; i++)
