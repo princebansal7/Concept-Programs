@@ -41,19 +41,16 @@ void bubbleSort(int arr[], int n)
 //----WAY-2 (Modified Bubble Sort)------------------------------------
 /*
     Here, we maintain a variable in each pass, if given array is sorted or became sorted
-    midway, if simply stops the loop and enhances performance.
+    midway, it simply stops the loop and enhances performance.
     => if Given Array sorted => TC: O(n)
         otherwise            => TC: O(n^2)
 */
 void modifiedBubbleSort(int arr[], int n)
 {
-    for (int i = 0; i < n - 1; i++)
-    {
+    for (int i = 0; i < n - 1; i++) {
         bool isSwapped = false;
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
                 swap(arr[j], arr[j + 1]);
                 isSwapped = true;
             }
